@@ -1,10 +1,11 @@
-import { StrictMode } from 'react';
-import { render } from 'react-dom';
-import { App } from './App';
+import { StrictMode } from "react";
+import { render } from "react-dom";
+import { App } from "./App";
+import "./config/i18n";
 
 render(
   <StrictMode>
     <App />
   </StrictMode>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );

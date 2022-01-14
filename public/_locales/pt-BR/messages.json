@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "L'compiti",
+    "description": "Nome da extensão."
+  },
+  "extDescription": {
+    "message": "A melhor extensão para produtividade.",
+    "description": "Descrição da extensão."
+  }
+}

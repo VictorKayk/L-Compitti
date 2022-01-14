@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "version": "0.1",
+
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "__MSG_extName__"
+  },
+  "homepage_url": "https://github.com/VictorKayk/L-Compiti",
+
+  "author": "Victor Kayk da Silva"
+}

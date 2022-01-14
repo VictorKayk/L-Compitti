@@ -1,0 +1,11 @@
+{
+  "geral": {
+    "theme": "light",
+    "language": "english"
+  },
+  "pomodoro": {
+    "focus": 25,
+    "short-pause": 5,
+    "long-pause": 15
+  }
+}
