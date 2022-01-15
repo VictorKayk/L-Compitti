@@ -1,0 +1,42 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "name": "test",
+      "color": "white",
+      "isFinished": false,
+      "notification": "12/12/2022",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "test1",
+          "isFinished": false,
+          "notification": "12/12/2022"
+        }
+      ]
+    }
+  ],
+  "notepad": [
+    {
+      "id": 1,
+      "name": "notepad",
+      "color": "white",
+      "notification": "12/12/2022",
+      "notes": [
+        {
+          "id": 1,
+          "title": "note",
+          "note": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+          "notification": "12/12/2022"
+        }
+      ]
+    }
+  ],
+  "pomodoro": [
+    {
+      "id": 1,
+      "type": "focusing",
+      "date": "12/12/2022"
+    }
+  ]
+}

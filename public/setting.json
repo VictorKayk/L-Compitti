@@ -5,7 +5,7 @@
   },
   "pomodoro": {
     "focus": 25,
-    "short-pause": 5,
-    "long-pause": 15
+    "short-break": 5,
+    "long-break": 15
   }
 }

@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { render } from "react-dom";
+import "./config/localforage";
 import "./config/i18n";
 
 import { App } from "./App";
