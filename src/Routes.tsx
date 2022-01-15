@@ -1,16 +1,16 @@
-import { lazy, ReactElement, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { lazy, ReactElement, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Loading } from "./components/atoms/Loading";
-import { Home } from "./pages/Home";
+import { Loading } from './components/ui/atoms/Loading';
+import { Home } from './components/pages/Home';
 
-const TodoList = lazy(() => import("./pages/TodoList"));
-const Todo = lazy(() => import("./pages/Todo"));
-const Notepad = lazy(() => import("./pages/Notepad"));
-const Notes = lazy(() => import("./pages/Notes"));
-const Note = lazy(() => import("./pages/Note"));
-const Pomodoro = lazy(() => import("./pages/Pomodoro"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const TodoList = lazy(() => import('./components/pages/TodoList'));
+const Todo = lazy(() => import('./components/pages/Todo'));
+const Notepad = lazy(() => import('./components/pages/Notepad'));
+const Notes = lazy(() => import('./components/pages/Notes'));
+const Note = lazy(() => import('./components/pages/Note'));
+const Pomodoro = lazy(() => import('./components/pages/Pomodoro'));
+const NotFound = lazy(() => import('./components/pages/NotFound'));
 
 export function AppRoutes(): ReactElement {
   return (
