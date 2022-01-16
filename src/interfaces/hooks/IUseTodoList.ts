@@ -21,5 +21,6 @@ export interface IUseTodoList {
       listId: string,
       { id, name, isFinished, notification }: ISetTodo
     ) => Promise<void>;
+    deleteTodo(listId: string, todoId: string): Promise<void>;
   };
 }
