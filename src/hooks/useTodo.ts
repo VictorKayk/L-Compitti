@@ -1,4 +1,4 @@
-import { IUseTodoList } from '../interfaces/hooks/IUseTodoList';
+import { IUseTodo } from '../interfaces/hooks/IUseTodo';
 
 import { setTodoList } from '../useCases/todo-list/list/set';
 import { deleteTodoList } from '../useCases/todo-list/list/delete';
@@ -8,7 +8,7 @@ import { readAllTodoList } from '../useCases/todo-list/list/readAll';
 import { setTodo } from '../useCases/todo-list/todo/set';
 import { deleteTodo } from '../useCases/todo-list/todo/delete';
 
-export function useTodoList(): IUseTodoList {
+export function useTodo(): IUseTodo {
   const list = {
     setTodoList,
     deleteTodoList,
