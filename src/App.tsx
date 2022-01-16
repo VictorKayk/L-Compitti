@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import { AppRoutes } from "./Routes";
+import { ReactElement } from 'react';
+import { AppRoutes } from './Routes';
 
 export function App(): ReactElement {
   return (

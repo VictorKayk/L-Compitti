@@ -6,7 +6,7 @@
       "color": "white",
       "isFinished": false,
       "notification": "12/12/2022",
-      "tasks": [
+      "todos": [
         {
           "id": 1,
           "name": "test1",
