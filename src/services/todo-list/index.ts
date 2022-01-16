@@ -11,4 +11,5 @@ export interface ITodoListService {
   }: ITodoList): Promise<void>;
   deleteTodoList(id: string): Promise<void>;
   readTodoList(id?: string): Promise<ITodoList | null>;
+  readAllTodoList(): Promise<ITodoList[]>;
 }
