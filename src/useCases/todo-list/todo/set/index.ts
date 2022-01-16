@@ -26,7 +26,7 @@ export async function setTodo(
           : todo
       );
 
-      setTodoList({
+      await setTodoList({
         id: listId,
         todos: newTodos,
       });
@@ -43,7 +43,7 @@ export async function setTodo(
 
   const newTodos = [...data.todos, todo];
 
-  setTodoList({
+  await setTodoList({
     id: listId,
     todos: newTodos,
   });
