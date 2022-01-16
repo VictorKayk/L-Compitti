@@ -50,7 +50,8 @@
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "no-useless-constructor": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-useless-return": "off"
   },
   "settings": {
     "import/resolver": {
