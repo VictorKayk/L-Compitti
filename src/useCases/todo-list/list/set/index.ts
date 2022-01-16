@@ -1,0 +1,26 @@
+import { v4 as uuid } from 'uuid';
+import { ISetTodoList } from '../../../../interfaces/todo-list/ISetTodoList';
+import { ITodoList } from '../../../../interfaces/todo-list/ITodoList';
+import todoListService from '../../../../services/todo-list/implementations';
+
+export async function setTodoList({
+  id,
+  name,
+  color,
+  isFinished,
+  notification,
+  todos,
+}: ISetTodoList): Promise<void> {
+  const data = await todoListService.readTodoList(id);
+
+  const todo: ITodoList = {
+    id: id || uuid(),
+    name: name || data?.name || '',
+    color: color || data?.color || '',
+    isFinished: isFinished || data?.isFinished || false,
+    notification: notification || data?.notification || null,
+    todos: todos || data?.todos || [],
+  };
+
+  await todoListService.setTodoList(todo);
+}

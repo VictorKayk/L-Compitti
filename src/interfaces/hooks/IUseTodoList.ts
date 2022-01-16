@@ -1,12 +1,15 @@
-import { ICreateTodoList } from '../todo-list/ICreateTodoList';
+import { ISetTodoList } from '../todo-list/ISetTodoList';
 
 export interface IUseTodoList {
   list: {
-    createTodoList: ({
+    setTodoList: ({
+      id,
       name,
       color,
+      isFinished,
       notification,
-    }: ICreateTodoList) => Promise<void>;
+      todos,
+    }: ISetTodoList) => Promise<void>;
     deleteTodoList: (id: string) => Promise<void>;
   };
 }

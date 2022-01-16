@@ -1,7 +1,8 @@
 import { ITodoList } from '../../interfaces/todo-list/ITodoList';
+import { ITodo } from '../../interfaces/todo-list/ITodo';
 
 export interface ITodoListService {
-  createTodoList({
+  setTodoList({
     id,
     name,
     color,
@@ -10,4 +11,5 @@ export interface ITodoListService {
     todos,
   }: ITodoList): Promise<void>;
   deleteTodoList(id: string): Promise<void>;
+  readTodoList(id?: string): Promise<ITodo | null>;
 }
