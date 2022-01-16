@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import { ISetTodo } from '../../../../interfaces/todo-list/ISetTodo';
 import { ITodo } from '../../../../interfaces/todo-list/ITodo';
-import todoListService from '../../../../services/todo-list/implementations';
+import todoListService from '../../../../services/todo-list';
 import { setTodoList } from '../../list/set';
 
 export async function setTodo(

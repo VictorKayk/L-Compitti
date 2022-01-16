@@ -1,4 +1,4 @@
-import todoService from '../../../../services/todo-list/implementations';
+import todoService from '../../../../services/todo-list';
 import { setTodoList } from '../../list/set';
 
 export async function deleteTodo(
