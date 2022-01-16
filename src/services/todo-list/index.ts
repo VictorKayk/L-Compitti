@@ -1,3 +1,4 @@
+import { ISetTodoList } from '../../interfaces/todo-list/ISetTodoList';
 import { ITodoList } from '../../interfaces/todo-list/ITodoList';
 
 export interface ITodoListService {
@@ -8,7 +9,7 @@ export interface ITodoListService {
     isFinished,
     notification,
     todos,
-  }: ITodoList): Promise<void>;
+  }: ISetTodoList): Promise<void>;
   deleteTodoList(id: string): Promise<void>;
   readTodoList(id?: string): Promise<ITodoList | null>;
   readAllTodoList(): Promise<ITodoList[]>;
