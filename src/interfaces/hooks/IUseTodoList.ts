@@ -7,5 +7,6 @@ export interface IUseTodoList {
       color,
       notification,
     }: ICreateTodoList) => Promise<void>;
+    deleteTodoList: (id: string) => Promise<void>;
   };
 }

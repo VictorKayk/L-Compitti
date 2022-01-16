@@ -9,4 +9,5 @@ export interface ITodoListService {
     notification,
     todos,
   }: ITodoList): Promise<void>;
+  deleteTodoList(id: string): Promise<void>;
 }

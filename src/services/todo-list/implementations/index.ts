@@ -19,6 +19,10 @@ class TodoListService implements ITodoListService {
       todos,
     });
   }
+
+  async deleteTodoList(id: string): Promise<void> {
+    await todoDatabase.removeItem(id);
+  }
 }
 
 export default new TodoListService();
