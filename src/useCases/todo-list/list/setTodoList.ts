@@ -16,7 +16,7 @@ export async function setTodoList({
   const data = await readTodoListService(id);
 
   const todo: ITodoList = {
-    id: id || uuid(),
+    id: data?.id || uuid(),
     name: name || data?.name || '',
     color: color || data?.color || '',
     isFinished: isFinished || data?.isFinished || false,
