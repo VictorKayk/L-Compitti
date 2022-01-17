@@ -1,3 +1,4 @@
 import { getConfig } from './getConfig';
+import { setConfig } from './setConfig';
 
-export { getConfig };
+export { getConfig, setConfig };

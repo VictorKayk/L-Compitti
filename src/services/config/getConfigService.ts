@@ -1,7 +1,7 @@
 import { configDatabase } from '../../config/localforage';
-import { IConfig } from '../../interfaces/config';
+import { IValue } from '../../interfaces/config';
 
-export async function getConfigService(config = ''): Promise<IConfig | null> {
-  const configData = (await configDatabase.getItem(config)) as IConfig | null;
+export async function getConfigService(config = ''): Promise<IValue | null> {
+  const configData = (await configDatabase.getItem(config)) as IValue | null;
   return configData;
 }

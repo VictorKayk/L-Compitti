@@ -1,5 +1,5 @@
+import { IValue } from '.';
+
 export interface IConfig {
-  [config: string]: {
-    [name: string]: [value: string];
-  };
+  [config: string]: IValue;
 }

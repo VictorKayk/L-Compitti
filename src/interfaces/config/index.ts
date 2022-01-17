@@ -1,3 +1,5 @@
 import { IConfig } from './IConfig';
+import { IValue } from './IValue';
+import { ISetConfig } from './ISetConfig';
 
-export { IConfig };
+export { IConfig, IValue, ISetConfig };
