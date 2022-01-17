@@ -1,47 +1,11 @@
-import { ITodoListService } from '../../interfaces/services';
-import { ITodoList } from '../../interfaces/todo-list';
-import { todoDatabase } from '../../config/localforage';
+import { setTodoListService } from './setTodoListService';
+import { readTodoListService } from './readTodoListService';
+import { readAllTodoListService } from './readAllTodoListService';
+import { deleteTodoListService } from './deleteTodoListService';
 
-class TodoListService implements ITodoListService {
-  async setTodoList({
-    id,
-    name,
-    color,
-    isFinished,
-    notification,
-    todos,
-  }: ITodoList): Promise<void> {
-    await todoDatabase.setItem(id, {
-      name,
-      color,
-      isFinished,
-      notification,
-      todos,
-    });
-  }
-
-  async deleteTodoList(id: string): Promise<void> {
-    await todoDatabase.removeItem(id);
-  }
-
-  async readTodoList(id = ''): Promise<ITodoList | null> {
-    const todoList = (await todoDatabase.getItem(id)) as ITodoList;
-    return todoList;
-  }
-
-  async readAllTodoList(): Promise<ITodoList[]> {
-    let todosLists: ITodoList[] = [];
-    await todoDatabase.iterate((value: ITodoList, key) => {
-      todosLists = [
-        ...todosLists,
-        {
-          ...value,
-          id: key,
-        },
-      ];
-    });
-    return todosLists;
-  }
-}
-
-export default new TodoListService();
+export {
+  setTodoListService,
+  readAllTodoListService,
+  readTodoListService,
+  deleteTodoListService,
+};

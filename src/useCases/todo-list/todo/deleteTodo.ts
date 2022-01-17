@@ -1,11 +1,11 @@
-import todoService from '../../../services/todo-list';
+import { readTodoListService } from '../../../services/todo-list';
 import { setTodoList } from '../list/setTodoList';
 
 export async function deleteTodo(
   listId: string,
   todoId: string
 ): Promise<void> {
-  const data = await todoService.readTodoList(listId);
+  const data = await readTodoListService(listId);
   if (!data) throw new Error("Todo list doesn't exist.");
 
   const isTodoInList = data.todos.find((todo) => todo.id === todoId);

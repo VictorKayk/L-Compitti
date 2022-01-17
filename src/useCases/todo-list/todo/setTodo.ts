@@ -1,13 +1,13 @@
 import { v4 as uuid } from 'uuid';
 import { ITodo, ISetTodo } from '../../../interfaces/todo-list';
-import todoListService from '../../../services/todo-list';
+import { readTodoListService } from '../../../services/todo-list';
 import { setTodoList } from '../list/setTodoList';
 
 export async function setTodo(
   listId: string,
   { id, name, isFinished, notification }: ISetTodo
 ): Promise<void> {
-  const data = await todoListService.readTodoList(listId);
+  const data = await readTodoListService(listId);
   if (!data) throw new Error("Todo list doesn't exist.");
 
   if (id) {
