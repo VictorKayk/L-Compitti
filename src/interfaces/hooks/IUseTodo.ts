@@ -2,7 +2,7 @@ import { ISetTodo } from '../todo-list/ISetTodo';
 import { ISetTodoList } from '../todo-list/ISetTodoList';
 import { ITodoList } from '../todo-list/ITodoList';
 
-interface IList {
+interface IListFunctions {
   setTodoList: ({
     id,
     name,
@@ -16,7 +16,7 @@ interface IList {
   readAllTodoList: () => Promise<ITodoList[]>;
 }
 
-interface ITodo {
+interface ITodoFunctions {
   setTodo: (
     listId: string,
     { id, name, isFinished, notification }: ISetTodo
@@ -25,6 +25,6 @@ interface ITodo {
 }
 
 export interface IUseTodo {
-  list: IList;
-  todo: ITodo;
+  list: IListFunctions;
+  todo: ITodoFunctions;
 }

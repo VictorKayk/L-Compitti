@@ -1,6 +1,6 @@
-import { ISetNotepad } from '../notepad';
+import { INotepad, ISetNotepad } from '../notepad';
 
-interface INotepad {
+interface INotepadFunctions {
   setNotepad: ({
     id,
     name,
@@ -8,8 +8,9 @@ interface INotepad {
     notification,
     notes,
   }: ISetNotepad) => Promise<void>;
+  readNotepad: (id?: string) => Promise<INotepad | null>;
 }
 
 export interface IUseNotepad {
-  notepad: INotepad;
+  notepad: INotepadFunctions;
 }
