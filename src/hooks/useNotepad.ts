@@ -5,6 +5,7 @@ import {
   readAllNotepad,
   deleteNotepad,
   setNote,
+  deleteNote,
 } from '../useCases/notepad';
 
 export function useNotepad(): IUseNotepad {
@@ -17,6 +18,7 @@ export function useNotepad(): IUseNotepad {
 
   const note = {
     setNote,
+    deleteNote,
   };
 
   return { notepad, note };
