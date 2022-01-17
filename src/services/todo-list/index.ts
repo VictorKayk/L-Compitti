@@ -1,5 +1,5 @@
-import { ITodoListService } from './interface';
-import { ITodoList } from '../../interfaces/todo-list/ITodoList';
+import { ITodoListService } from '../../interfaces/services';
+import { ITodoList } from '../../interfaces/todo-list';
 import { todoDatabase } from '../../config/localforage';
 
 class TodoListService implements ITodoListService {

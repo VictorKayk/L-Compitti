@@ -1,5 +1,4 @@
-import { ISetTodoList } from '../../interfaces/todo-list/ISetTodoList';
-import { ITodoList } from '../../interfaces/todo-list/ITodoList';
+import { ISetTodoList, ITodoList } from '../todo-list';
 
 export interface ITodoListService {
   setTodoList({

@@ -1,4 +1,4 @@
-import { IUseTodo } from '../interfaces/hooks/IUseTodo';
+import { IUseTodo } from '../interfaces/hooks';
 
 import {
   setTodoList,
