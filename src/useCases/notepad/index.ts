@@ -3,4 +3,6 @@ import { readNotepad } from './notepad/readNotepad';
 import { readAllNotepad } from './notepad/readAllNotepad';
 import { deleteNotepad } from './notepad/deleteNotepad';
 
-export { setNotepad, readNotepad, readAllNotepad, deleteNotepad };
+import { setNote } from './note/setNote';
+
+export { setNotepad, readNotepad, readAllNotepad, deleteNotepad, setNote };

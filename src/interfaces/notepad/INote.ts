@@ -1,6 +1,6 @@
 export interface INote {
   id: string;
   title: string;
-  notification: string;
+  notification: Date | null;
   note: string;
 }
