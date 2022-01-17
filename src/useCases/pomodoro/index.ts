@@ -1,3 +1,4 @@
+import { readPomodoro } from './readPomodoro';
 import { setPomodoro } from './setPomodoro';
 
-export { setPomodoro };
+export { readPomodoro, setPomodoro };
