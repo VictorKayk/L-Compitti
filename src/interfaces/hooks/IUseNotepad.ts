@@ -9,6 +9,7 @@ interface INotepadFunctions {
     notes,
   }: ISetNotepad) => Promise<void>;
   readNotepad: (id?: string) => Promise<INotepad | null>;
+  readAllNotepad: () => Promise<INotepad[] | []>;
   deleteNotepad: (id: string) => Promise<void>;
 }
 

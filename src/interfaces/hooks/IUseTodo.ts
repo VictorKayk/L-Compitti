@@ -13,7 +13,7 @@ interface IListFunctions {
   }: ISetTodoList) => Promise<void>;
   deleteTodoList: (id: string) => Promise<void>;
   readTodoList: (id?: string) => Promise<ITodoList | null>;
-  readAllTodoList: () => Promise<ITodoList[]>;
+  readAllTodoList: () => Promise<ITodoList[] | []>;
 }
 
 interface ITodoFunctions {
