@@ -1,8 +1,8 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
 
-import en from "../translations/en/translation.json";
-import pt_BR from "../translations/pt_BR/translation.json";
+import en from '../../public/locales/en/translation.json';
+import pt_BR from '../../public/locales/pt_BR/translation.json';
 
 const resources = {
   en,
@@ -11,7 +11,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
+  lng: 'en',
   interpolation: {
     escapeValue: false,
   },
