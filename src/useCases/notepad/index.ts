@@ -5,6 +5,7 @@ import { deleteNotepad } from './notepad/deleteNotepad';
 
 import { setNote } from './note/setNote';
 import { deleteNote } from './note/deleteNote';
+import { infosNote } from './note/infosNote';
 
 export {
   setNotepad,
@@ -13,4 +14,5 @@ export {
   deleteNotepad,
   setNote,
   deleteNote,
+  infosNote,
 };

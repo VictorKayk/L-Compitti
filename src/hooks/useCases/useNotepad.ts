@@ -6,6 +6,7 @@ import {
   deleteNotepad,
   setNote,
   deleteNote,
+  infosNote,
 } from '../../useCases/notepad';
 
 export function useNotepad(): IUseNotepad {
@@ -19,6 +20,7 @@ export function useNotepad(): IUseNotepad {
   const note = {
     setNote,
     deleteNote,
+    infosNote,
   };
 
   return { notepad, note };

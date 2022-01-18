@@ -1,4 +1,4 @@
-import { INotepad, ISetNote, ISetNotepad } from '../../notepad';
+import { IInfosNote, INotepad, ISetNote, ISetNotepad } from '../../notepad';
 
 interface INotepadFunctions {
   setNotepad: ({
@@ -19,6 +19,7 @@ interface INoteFunctions {
     { id, title, notification, note }: ISetNote
   ) => Promise<void>;
   deleteNote: (notepadId: string, noteId: string) => Promise<void>;
+  infosNote(): Promise<IInfosNote>;
 }
 
 export interface IUseNotepad {

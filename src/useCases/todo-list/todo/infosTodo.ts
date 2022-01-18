@@ -12,9 +12,8 @@ export async function infosTodo(): Promise<IInfosTodo> {
     unfinishedTodos = [...unfinishedTodos, ...unfinished];
   });
 
+  const data = new Date().getTime();
   const nextTodo = unfinishedTodos.reduce((acc, todo) => {
-    const data = new Date().getTime();
-
     if (!todo.notification) return acc;
 
     if (todo.notification.getTime() > data) {
