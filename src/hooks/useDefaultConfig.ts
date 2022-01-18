@@ -1,5 +1,5 @@
 import { IUseDefaultConfig } from '../interfaces/hooks';
-import { useConfig } from '.';
+import { useConfig } from './useCases';
 import { IValue } from '../interfaces/config';
 
 export function useDefaultConfig(): IUseDefaultConfig {

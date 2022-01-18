@@ -1,4 +1,4 @@
-import { IUseNotepad } from '../interfaces/hooks';
+import { IUseNotepad } from '../../interfaces/hooks/useCases';
 import {
   setNotepad,
   readNotepad,
@@ -6,7 +6,7 @@ import {
   deleteNotepad,
   setNote,
   deleteNote,
-} from '../useCases/notepad';
+} from '../../useCases/notepad';
 
 export function useNotepad(): IUseNotepad {
   const notepad = {

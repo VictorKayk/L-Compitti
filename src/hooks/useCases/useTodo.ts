@@ -1,4 +1,4 @@
-import { IUseTodo } from '../interfaces/hooks';
+import { IUseTodo } from '../../interfaces/hooks/useCases';
 
 import {
   setTodoList,
@@ -7,7 +7,7 @@ import {
   readAllTodoList,
   setTodo,
   deleteTodo,
-} from '../useCases/todo-list';
+} from '../../useCases/todo-list';
 
 export function useTodo(): IUseTodo {
   const list = {

@@ -1,10 +1,10 @@
-import { IUsePomodoro } from '../interfaces/hooks';
+import { IUsePomodoro } from '../../interfaces/hooks/useCases';
 
 import {
   readPomodoro,
   readAllPomodoros,
   setPomodoro,
-} from '../useCases/pomodoro';
+} from '../../useCases/pomodoro';
 
 export function usePomodoro(): IUsePomodoro {
   return {

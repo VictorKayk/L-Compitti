@@ -1,4 +1,4 @@
-import { INotepad, ISetNote, ISetNotepad } from '../notepad';
+import { INotepad, ISetNote, ISetNotepad } from '../../notepad';
 
 interface INotepadFunctions {
   setNotepad: ({

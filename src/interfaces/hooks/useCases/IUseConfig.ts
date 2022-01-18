@@ -1,4 +1,4 @@
-import { IValue, ISetConfig, IConfig } from '../config';
+import { IValue, ISetConfig, IConfig } from '../../config';
 
 export interface IUseConfig {
   getConfig: (config?: string) => Promise<IValue | null>;

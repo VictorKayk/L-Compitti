@@ -1,4 +1,4 @@
-import { IPomodoro, ISetPomodoro } from '../pomodoro';
+import { IPomodoro, ISetPomodoro } from '../../pomodoro';
 
 export interface IUsePomodoro {
   readPomodoro: (id?: string) => Promise<IPomodoro | null>;

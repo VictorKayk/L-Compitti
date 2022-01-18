@@ -1,6 +1,6 @@
-import { ISetTodo } from '../todo-list/ISetTodo';
-import { ISetTodoList } from '../todo-list/ISetTodoList';
-import { ITodoList } from '../todo-list/ITodoList';
+import { ISetTodo } from '../../todo-list/ISetTodo';
+import { ISetTodoList } from '../../todo-list/ISetTodoList';
+import { ITodoList } from '../../todo-list/ITodoList';
 
 interface IListFunctions {
   setTodoList: ({
