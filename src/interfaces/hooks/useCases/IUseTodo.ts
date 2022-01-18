@@ -1,6 +1,4 @@
-import { ISetTodo } from '../../todo-list/ISetTodo';
-import { ISetTodoList } from '../../todo-list/ISetTodoList';
-import { ITodoList } from '../../todo-list/ITodoList';
+import { IInfosTodo, ISetTodo, ISetTodoList, ITodoList } from '../../todo-list';
 
 interface IListFunctions {
   setTodoList: ({
@@ -22,6 +20,7 @@ interface ITodoFunctions {
     { id, name, isFinished, notification }: ISetTodo
   ) => Promise<void>;
   deleteTodo(listId: string, todoId: string): Promise<void>;
+  infosTodo(): Promise<IInfosTodo>;
 }
 
 export interface IUseTodo {

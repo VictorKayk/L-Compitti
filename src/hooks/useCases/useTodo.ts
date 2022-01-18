@@ -7,6 +7,7 @@ import {
   readAllTodoList,
   setTodo,
   deleteTodo,
+  infosTodo,
 } from '../../useCases/todo-list';
 
 export function useTodo(): IUseTodo {
@@ -20,6 +21,7 @@ export function useTodo(): IUseTodo {
   const todo = {
     setTodo,
     deleteTodo,
+    infosTodo,
   };
 
   return { list, todo };

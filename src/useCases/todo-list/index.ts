@@ -5,6 +5,7 @@ import { deleteTodoList } from './list/deleteTodoList';
 
 import { setTodo } from './todo/setTodo';
 import { deleteTodo } from './todo/deleteTodo';
+import { infosTodo } from './todo/infosTodo';
 
 export {
   setTodoList,
@@ -13,4 +14,5 @@ export {
   deleteTodoList,
   setTodo,
   deleteTodo,
+  infosTodo,
 };
