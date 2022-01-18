@@ -1,3 +1,4 @@
 import { useDefaultConfig } from './useDefaultConfig';
+import { useLanguage } from './useLanguage';
 
-export { useDefaultConfig };
+export { useDefaultConfig, useLanguage };
