@@ -1,5 +1,5 @@
 import { lazy, ReactElement, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Loading } from './components/ui/atoms/Loading';
 import { Home } from './components/pages/Home';
