@@ -27,7 +27,9 @@ export async function infosPomodoro(): Promise<IInfosPomodoro> {
 
   const lastPomodoro = todayPomodoros.reduce((acc, pomodoro) => {
     if (isEmpty(acc)) return pomodoro;
-    if (pomodoro.end?.getTime() > acc.end?.getTime()) return pomodoro;
+    if (pomodoro.end && acc.end) {
+      if (pomodoro.end?.getTime() > acc.end?.getTime()) return pomodoro;
+    }
     return acc;
   }, {} as IPomodoro);
 

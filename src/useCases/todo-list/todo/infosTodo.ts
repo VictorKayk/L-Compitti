@@ -18,7 +18,10 @@ export async function infosTodo(): Promise<IInfosTodo> {
 
     if (todo.notification.getTime() > data) {
       if (isEmpty(acc)) return todo;
-      if (todo.notification.getTime() < acc.notification.getTime()) return todo;
+      if (acc.notification) {
+        if (todo.notification.getTime() < acc.notification.getTime())
+          return todo;
+      }
     }
 
     return acc;

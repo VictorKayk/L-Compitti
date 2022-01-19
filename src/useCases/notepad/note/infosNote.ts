@@ -17,7 +17,10 @@ export async function infosNote(): Promise<IInfosNote> {
 
     if (note.notification.getTime() > data) {
       if (isEmpty(acc)) return note;
-      if (note.notification.getTime() < acc.notification.getTime()) return note;
+      if (acc.notification) {
+        if (note.notification.getTime() < acc.notification.getTime())
+          return note;
+      }
     }
 
     return acc;
