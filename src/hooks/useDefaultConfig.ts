@@ -9,7 +9,7 @@ export function useDefaultConfig(): IUseDefaultConfig {
     const geral = await getConfig('geral');
     if (!geral) {
       const geralDefaultConfig: IValue = {
-        theme: 'white',
+        theme: 'light',
         language: 'en',
       };
       await setConfig('geral', geralDefaultConfig);
