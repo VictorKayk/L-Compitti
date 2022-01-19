@@ -4,6 +4,7 @@ import {
   readPomodoro,
   readAllPomodoros,
   setPomodoro,
+  infosPomodoro,
 } from '../../useCases/pomodoro';
 
 export function usePomodoro(): IUsePomodoro {
@@ -11,5 +12,6 @@ export function usePomodoro(): IUsePomodoro {
     readPomodoro,
     readAllPomodoros,
     setPomodoro,
+    infosPomodoro,
   };
 }

@@ -12,12 +12,12 @@ export async function infosNote(): Promise<IInfosNote> {
   });
 
   const data = new Date().getTime();
-  const nextNote = notes.reduce((acc, todo) => {
-    if (!todo.notification) return acc;
+  const nextNote = notes.reduce((acc, note) => {
+    if (!note.notification) return acc;
 
-    if (todo.notification.getTime() > data) {
-      if (isEmpty(acc)) return todo;
-      if (todo.notification.getTime() < acc.notification.getTime()) return todo;
+    if (note.notification.getTime() > data) {
+      if (isEmpty(acc)) return note;
+      if (note.notification.getTime() < acc.notification.getTime()) return note;
     }
 
     return acc;

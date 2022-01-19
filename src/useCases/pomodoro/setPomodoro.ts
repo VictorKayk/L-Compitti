@@ -10,11 +10,10 @@ export async function setPomodoro({
   end,
 }: ISetPomodoro): Promise<void> {
   const pomodoro = await readPomodoro(id);
-  console.log(pomodoro);
 
   await setPomodoroService({
     id: pomodoro?.id || uuid(),
-    type: type || pomodoro?.type || '',
+    type: type || pomodoro?.type || 'focus',
     start: start || pomodoro?.start || new Date(),
     end: end || pomodoro?.end || null,
   });
