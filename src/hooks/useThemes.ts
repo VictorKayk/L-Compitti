@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { DefaultTheme } from 'styled-components';
 
 import { IUseThemes } from '../interfaces/hooks';
 import themes from '../styles/themes';
@@ -11,13 +10,10 @@ export function useThemes(): IUseThemes {
 
   useEffect(() => {
     async function getTheme(): Promise<void> {
-      const geral = await getConfig('geral');
-      if (geral) {
-        const theme = themes[geral.theme] as DefaultTheme;
-        setCurrentTheme(theme);
-      } else {
-        setCurrentTheme(themes.light);
-      }
+      const geral = (await getConfig('geral')) as { theme: 'light' | 'dark' };
+
+      const theme = geral ? themes[geral.theme] : themes.light;
+      setCurrentTheme(theme);
     }
     getTheme();
   }, []);
