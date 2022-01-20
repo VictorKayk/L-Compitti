@@ -1,0 +1,11 @@
+/* Webfont: FUNGIS-Regular */@font-face {
+    font-family: 'FUNGISRegular';
+    src: url('grotesca44.eot'); /* IE9 Compat Modes */
+    src: url('grotesca44.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('grotesca44.woff') format('woff'), /* Modern Browsers */
+         url('grotesca44.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
