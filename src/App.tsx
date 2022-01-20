@@ -20,9 +20,7 @@ export function App(): ReactElement {
   return (
     <ThemeProvider theme={themeStyle}>
       <Header />
-      <main>
-        <AppRoutes />
-      </main>
+      <AppRoutes />
       <GlobalStyle />
     </ThemeProvider>
   );

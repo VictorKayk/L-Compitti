@@ -15,6 +15,7 @@ interface IDefaultTheme {
       primary: string;
       title: string;
       logo: string;
+      pageTitle: string;
     };
     style: {
       logo: string;
@@ -35,6 +36,7 @@ export const defaultTheme: IDefaultTheme = {
       primary: '1rem',
       title: '1.5625rem',
       logo: '1.625rem',
+      pageTitle: '2.34375rem',
     },
     weight: {
       primary: 400,

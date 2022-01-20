@@ -10,6 +10,10 @@ declare module 'styled-components' {
     };
     colors: {
       primary: string;
+      gradient: {
+        primary: string;
+        secondary: string;
+      };
     };
     fonts: {
       family: {
@@ -27,6 +31,7 @@ declare module 'styled-components' {
         primary: string;
         title: string;
         logo: string;
+        pageTitle: string;
       };
       style: {
         logo: string;
