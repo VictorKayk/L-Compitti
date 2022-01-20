@@ -1,5 +1,6 @@
 import { ReactElement, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { Header } from './components/ui/molecules';
 import { useDefaultConfig, useThemes } from './hooks';
 
 import { AppRoutes } from './Routes';
@@ -7,7 +8,7 @@ import { GlobalStyle } from './styles/global';
 
 export function App(): ReactElement {
   const { setDefaultConfig } = useDefaultConfig();
-  const { theme, setTheme } = useThemes();
+  const { themeStyle } = useThemes();
 
   useEffect(() => {
     async function setConfigs(): Promise<void> {
@@ -16,10 +17,9 @@ export function App(): ReactElement {
     setConfigs();
   }, []);
 
-  setTheme('dark');
   return (
-    <ThemeProvider theme={theme}>
-      <h2>Header</h2>
+    <ThemeProvider theme={themeStyle}>
+      <Header />
       <main>
         <AppRoutes />
       </main>
