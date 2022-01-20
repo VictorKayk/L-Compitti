@@ -51,7 +51,11 @@
     "react/react-in-jsx-scope": "off",
     "no-useless-constructor": "off",
     "class-methods-use-this": "off",
-    "no-useless-return": "off"
+    "no-useless-return": "off",
+    "react/require-default-props": [
+      0,
+      { "forbidDefaultForRequired": false, "ignoreFunctionalComponents": false }
+    ]
   },
   "settings": {
     "import/resolver": {
