@@ -13,7 +13,7 @@ export const PageTitleContainer = styled.div`
 export const ItensContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 
   padding: 0 1.8125rem;
 `;
