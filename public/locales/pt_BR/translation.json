@@ -3,8 +3,9 @@
     "home-page-title": "Produtividade.",
     "home-page-quote-text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     "home-page-quote-author": "Algum estranho",
-    "home-page-todo": "Tarefas",
-    "home-page-note": "Notas",
-    "home-page-pomodoro": "Pomodoro"
+    "todo": "Tarefas",
+    "note": "Notas",
+    "pomodoro": "Pomodoro",
+    "configuration": "Configuração"
   }
 }

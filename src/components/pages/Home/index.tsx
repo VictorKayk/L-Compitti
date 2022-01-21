@@ -55,19 +55,19 @@ export function Home(): ReactElement {
         author: t('home-page-quote-author'),
       }}
       todo={{
-        title: t('home-page-todo'),
+        title: t('todo'),
         number: todo,
         item: nextTodo,
         linkTo: '/todo',
       }}
       note={{
-        title: t('home-page-note'),
+        title: t('note'),
         number: note,
         item: nextNote,
         linkTo: '/notepad',
       }}
       pomodoro={{
-        title: t('home-page-pomodoro'),
+        title: t('pomodoro'),
         number: pomodoro,
         item: lastPomodoro,
         linkTo: '/pomodoro',
