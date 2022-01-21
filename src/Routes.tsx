@@ -3,7 +3,9 @@ import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Loading } from './components/ui/atoms/Loading';
 import { Home } from './components/pages/Home';
+import { App } from './App';
 
+const Menu = lazy(() => import('./components/pages/Menu'));
 const TodoList = lazy(() => import('./components/pages/TodoList'));
 const Todo = lazy(() => import('./components/pages/Todo'));
 const Notepad = lazy(() => import('./components/pages/Notepad'));
@@ -16,66 +18,76 @@ export function AppRoutes(): ReactElement {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="todo"
-          element={
-            <Suspense fallback={<Loading />}>
-              <TodoList />
-            </Suspense>
-          }
-        >
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
           <Route
-            path=":list"
+            path="/menu"
             element={
               <Suspense fallback={<Loading />}>
-                <Todo />
+                <Menu />
               </Suspense>
             }
           />
-        </Route>
-        <Route
-          path="notepad"
-          element={
-            <Suspense fallback={<Loading />}>
-              <Notepad />
-            </Suspense>
-          }
-        >
           <Route
-            path=":notes"
+            path="todo"
             element={
               <Suspense fallback={<Loading />}>
-                <Notes />
+                <TodoList />
               </Suspense>
             }
           >
             <Route
-              path=":id"
+              path=":list"
               element={
                 <Suspense fallback={<Loading />}>
-                  <Note />
+                  <Todo />
                 </Suspense>
               }
             />
           </Route>
+          <Route
+            path="notepad"
+            element={
+              <Suspense fallback={<Loading />}>
+                <Notepad />
+              </Suspense>
+            }
+          >
+            <Route
+              path=":notes"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <Notes />
+                </Suspense>
+              }
+            >
+              <Route
+                path=":id"
+                element={
+                  <Suspense fallback={<Loading />}>
+                    <Note />
+                  </Suspense>
+                }
+              />
+            </Route>
+          </Route>
+          <Route
+            path="pomodoro"
+            element={
+              <Suspense fallback={<Loading />}>
+                <Pomodoro />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<Loading />}>
+                <NotFound />
+              </Suspense>
+            }
+          />
         </Route>
-        <Route
-          path="pomodoro"
-          element={
-            <Suspense fallback={<Loading />}>
-              <Pomodoro />
-            </Suspense>
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <Suspense fallback={<Loading />}>
-              <NotFound />
-            </Suspense>
-          }
-        />
       </Routes>
     </Router>
   );

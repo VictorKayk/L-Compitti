@@ -5,5 +5,15 @@ import { Quote } from './Quote';
 import { Title } from './Title';
 import { Subtitle } from './Subtitle';
 import { ListedItem } from './ListedItem';
+import { HeaderContainer } from './HeaderContainer';
 
-export { Loading, IconThemed, PageTitle, Quote, Title, Subtitle, ListedItem };
+export {
+  Loading,
+  IconThemed,
+  PageTitle,
+  Quote,
+  Title,
+  Subtitle,
+  ListedItem,
+  HeaderContainer,
+};

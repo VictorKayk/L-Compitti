@@ -1,3 +1,4 @@
+import { Menu } from './Menu';
 import { Home } from './Home';
 
-export { Home };
+export { Menu, Home };

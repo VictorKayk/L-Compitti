@@ -1,14 +1,14 @@
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
 
-import { App } from './App';
+import { AppRoutes } from './Routes';
 
 import './config/localforage';
 import './config/i18n';
 
 render(
   <StrictMode>
-    <App />
+    <AppRoutes />
   </StrictMode>,
   document.getElementById('root')
 );

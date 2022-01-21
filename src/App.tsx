@@ -1,9 +1,9 @@
 import { ReactElement, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Header } from './components/ui/molecules';
 import { useDefaultConfig, useThemes } from './hooks';
 
-import { AppRoutes } from './Routes';
 import { GlobalStyle } from './styles/global';
 
 export function App(): ReactElement {
@@ -19,8 +19,8 @@ export function App(): ReactElement {
 
   return (
     <ThemeProvider theme={themeStyle}>
-      <Header />
-      <AppRoutes />
+      <Header logoLink="/" menuLink="/menu" />
+      <Outlet />
       <GlobalStyle />
     </ThemeProvider>
   );
