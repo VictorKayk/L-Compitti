@@ -1,24 +1,27 @@
 import { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Menu as MenuTemplate } from '../../ui/templates';
 
 export default function Menu(): ReactElement {
+  const { t } = useTranslation();
+
   return (
     <MenuTemplate
       title="Menu"
       todo={{
-        title: 'todo',
+        title: t('todo'),
         linkTo: '/todo',
       }}
       note={{
-        title: 'note',
+        title: t('note'),
         linkTo: '/notepad',
       }}
       pomodoro={{
-        title: 'pomodoro',
+        title: t('pomodoro'),
         linkTo: '/pomodoro',
       }}
       config={{
-        title: 'configuration',
+        title: t('configuration'),
         linkTo: '/config',
       }}
     />
