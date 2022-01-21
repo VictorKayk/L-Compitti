@@ -11,7 +11,7 @@ export function Quote({ quote, author }: IQuote): ReactElement {
     <Container>
       <blockquote>&quot;{quote}&quot;</blockquote>
       <figcaption>
-        - <cite>{author}</cite>
+        - <cite>{author}</cite>.
       </figcaption>
     </Container>
   );

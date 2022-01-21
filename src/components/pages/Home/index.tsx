@@ -1,5 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
 import { Home as HomeTemplate } from '../../ui/templates';
 
 import { useTodo, useNotepad, usePomodoro } from '../../../hooks/useCases';
@@ -21,6 +22,8 @@ export function Home(): ReactElement {
     note: { infosNote },
   } = useNotepad();
   const { infosPomodoro } = usePomodoro();
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     async function getInfos(): Promise<void> {
@@ -46,25 +49,25 @@ export function Home(): ReactElement {
 
   return (
     <HomeTemplate
-      title="Produtividade."
+      title={t('home-page-title')}
       quote={{
-        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-        author: 'Lorem Ipsum',
+        text: t('home-page-quote-text'),
+        author: t('home-page-quote-author'),
       }}
       todo={{
-        title: 'Todo',
+        title: t('home-page-todo'),
         number: todo,
         item: nextTodo,
         linkTo: '/todo',
       }}
       note={{
-        title: 'Note',
+        title: t('home-page-note'),
         number: note,
         item: nextNote,
         linkTo: '/notepad',
       }}
       pomodoro={{
-        title: 'Pomodoro',
+        title: t('home-page-pomodoro'),
         number: pomodoro,
         item: lastPomodoro,
         linkTo: '/pomodoro',
