@@ -5,7 +5,7 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  padding: 1.25rem 2.5rem;
+  padding: 1rem 2.5rem;
 
   border-bottom: 2.5px solid ${({ theme }) => theme.colors.primary};
 `;
