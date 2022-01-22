@@ -1,11 +1,7 @@
-import { ReactElement } from "react";
-import { Outlet } from "react-router-dom";
+import { ReactElement } from 'react';
+import { Outlet } from 'react-router-dom';
+import { TodoList as TodoListTemplate } from '../../ui/templates';
 
 export default function TodoList(): ReactElement {
-  return (
-    <>
-      <h2>Todo List</h2>
-      <Outlet />
-    </>
-  );
+  return <TodoListTemplate title="Todo-list" />;
 }
