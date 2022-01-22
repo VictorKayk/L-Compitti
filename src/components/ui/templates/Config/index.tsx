@@ -1,9 +1,15 @@
 import { ReactElement, useCallback } from 'react';
 import { PageTitle, Title } from '../../atoms';
 import { Select } from '../../atoms/Select';
-import { ConfigurationContainer, Container, PageTitleContainer, TitleAndSelectContainer } from './style';
+import {
+  ConfigurationContainer,
+  Container,
+  PageTitleContainer,
+  TitleAndSelectContainer,
+} from './style';
 
 interface IConfig {
+  pageTitle: string;
   theme: {
     setTheme: (theme: 'light' | 'dark') => Promise<void>;
     label: string;
@@ -24,7 +30,7 @@ interface IConfig {
   };
 }
 
-export function Config({ theme, language }: IConfig): ReactElement {
+export function Config({ pageTitle, theme, language }: IConfig): ReactElement {
   const handleChangeTheme = useCallback(
     (value: string): void => {
       theme.setTheme(value as 'light' | 'dark');
@@ -42,7 +48,7 @@ export function Config({ theme, language }: IConfig): ReactElement {
   return (
     <Container>
       <PageTitleContainer>
-        <PageTitle title="Configuration" />
+        <PageTitle title={pageTitle} />
       </PageTitleContainer>
       <ConfigurationContainer>
         <TitleAndSelectContainer>

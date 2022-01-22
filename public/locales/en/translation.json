@@ -6,6 +6,16 @@
     "todo": "To-do's",
     "note": "Notes",
     "pomodoro": "Pomodoro",
-    "configuration": "Configuration"
+    "configuration": "Configuration",
+    "themes": "Themes",
+    "theme-light-label": "Light",
+    "theme-light": "light",
+    "theme-dark-label": "Dark",
+    "theme-dark": "dark",
+    "languages": "Languages",
+    "language-english-label": "English",
+    "language-english": "en",
+    "language-portuguese-label": "Portuguese",
+    "language-portuguese": "pt_BR"
   }
 }
