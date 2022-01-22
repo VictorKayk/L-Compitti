@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 2.25rem;
 
-  padding: 0 1.8125rem;
+  padding: 0 1.8125rem 2.25rem;
 `;
 
 export const ListContainer = styled.div`
