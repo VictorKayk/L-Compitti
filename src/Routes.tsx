@@ -6,6 +6,7 @@ import { Home } from './components/pages/Home';
 import { App } from './App';
 
 const Menu = lazy(() => import('./components/pages/Menu'));
+const Config = lazy(() => import('./components/pages/Config'));
 const TodoList = lazy(() => import('./components/pages/TodoList'));
 const Todo = lazy(() => import('./components/pages/Todo'));
 const Notepad = lazy(() => import('./components/pages/Notepad'));
@@ -25,6 +26,14 @@ export function AppRoutes(): ReactElement {
             element={
               <Suspense fallback={<Loading />}>
                 <Menu />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/config"
+            element={
+              <Suspense fallback={<Loading />}>
+                <Config />
               </Suspense>
             }
           />

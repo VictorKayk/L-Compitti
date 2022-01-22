@@ -31,9 +31,10 @@ export function ThemeContext({
       setIsThemeLoaded(false);
       const geral = (await getConfig('geral')) as { theme: 'light' | 'dark' };
 
-      const theme = geral ? themes[geral.theme] : themes.light;
-      setCurrentTheme(geral.theme);
-      setCurrentThemeStyle(theme);
+      const theme = geral ? geral.theme : 'light';
+      setCurrentTheme(theme);
+      const themeStyle = geral ? themes[geral.theme] : themes.light;
+      setCurrentThemeStyle(themeStyle);
       setIsThemeLoaded(true);
     }
     getTheme();
