@@ -1,6 +1,6 @@
 import { INote } from '.';
 
 export interface IInfosNote {
-  notes: number;
+  items: number;
   nextNote: INote;
 }

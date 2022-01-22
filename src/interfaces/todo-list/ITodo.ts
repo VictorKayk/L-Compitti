@@ -1,6 +1,6 @@
 export interface ITodo {
   id: string;
   name: string;
-  isFinished: boolean;
+  isFinished?: boolean;
   notification: Date | null;
 }

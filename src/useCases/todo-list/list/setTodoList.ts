@@ -11,7 +11,7 @@ export async function setTodoList({
   color,
   isFinished,
   notification,
-  todos,
+  items,
 }: ISetTodoList): Promise<void> {
   const data = await readTodoListService(id);
 
@@ -21,7 +21,7 @@ export async function setTodoList({
     color: color || data?.color || '',
     isFinished: isFinished || data?.isFinished || false,
     notification: notification || data?.notification || null,
-    todos: todos || data?.todos || [],
+    items: items || data?.items || [],
   };
 
   await setTodoListService(todo);

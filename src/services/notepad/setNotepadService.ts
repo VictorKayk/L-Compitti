@@ -6,7 +6,7 @@ export async function setNotepadService({
   name,
   color,
   notification,
-  notes,
+  items,
 }: INotepad): Promise<void> {
-  await notepadDatabase.setItem(id, { name, color, notification, notes });
+  await notepadDatabase.setItem(id, { name, color, notification, items });
 }

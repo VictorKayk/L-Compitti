@@ -6,5 +6,5 @@ export interface ISetTodoList {
   color?: string;
   isFinished?: boolean;
   notification?: Date | null;
-  todos?: ITodo[] | [];
+  items?: ITodo[] | [];
 }

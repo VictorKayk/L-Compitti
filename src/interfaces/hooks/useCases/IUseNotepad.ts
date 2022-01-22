@@ -6,7 +6,7 @@ interface INotepadFunctions {
     name,
     color,
     notification,
-    notes,
+    items,
   }: ISetNotepad) => Promise<void>;
   readNotepad: (id?: string) => Promise<INotepad | null>;
   readAllNotepad: () => Promise<INotepad[] | []>;

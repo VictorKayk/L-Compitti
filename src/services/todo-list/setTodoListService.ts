@@ -7,13 +7,13 @@ export async function setTodoListService({
   color,
   isFinished,
   notification,
-  todos,
+  items,
 }: ITodoList): Promise<void> {
   await todoDatabase.setItem(id, {
     name,
     color,
     isFinished,
     notification,
-    todos,
+    items,
   });
 }

@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 
-export function Loading(): ReactElement {
-  return <>...</>;
+export function Loading(): ReactElement | null {
+  return null;
 }

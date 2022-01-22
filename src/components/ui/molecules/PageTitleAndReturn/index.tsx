@@ -9,22 +9,26 @@ import darkIcon from '../../../../assets/icons/return-dark.svg';
 
 interface IPageTitleAndReturn {
   title: string;
+  goBack: () => void;
 }
 
 export function PageTitleAndReturn({
   title,
+  goBack,
 }: IPageTitleAndReturn): ReactElement {
   return (
     <Container>
       <PageTitleContainer>
         <PageTitle title={title} />
       </PageTitleContainer>
-      <IconThemed
-        altIcon="Return icon"
-        lightTheme={lightIcon}
-        darkTheme={darkIcon}
-        clickable
-      />
+      <button type="button" onClick={goBack}>
+        <IconThemed
+          altIcon="Return icon"
+          lightTheme={lightIcon}
+          darkTheme={darkIcon}
+          clickable
+        />
+      </button>
     </Container>
   );
 }

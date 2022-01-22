@@ -8,14 +8,14 @@ export async function deleteTodo(
   const data = await readTodoListService(listId);
   if (!data) throw new Error("Todo list doesn't exist.");
 
-  const isTodoInList = data.todos.find((todo) => todo.id === todoId);
+  const isTodoInList = data.items.find((todo) => todo.id === todoId);
 
   if (isTodoInList) {
-    const newTodos = data.todos.filter((todo) => todo.id !== todoId);
+    const newTodos = data.items.filter((todo) => todo.id !== todoId);
 
     await setTodoList({
       id: listId,
-      todos: newTodos,
+      items: newTodos,
     });
   }
 }

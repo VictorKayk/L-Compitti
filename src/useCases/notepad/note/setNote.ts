@@ -11,9 +11,9 @@ export async function setNote(
 
   let newNotes: INote[] = [];
 
-  const isNoteInNotepad = notepad.notes.find((value) => value.id === id);
+  const isNoteInNotepad = notepad.items.find((value) => value.id === id);
   if (isNoteInNotepad) {
-    newNotes = notepad.notes.map((value) =>
+    newNotes = notepad.items.map((value) =>
       value.id === id
         ? {
             id,
@@ -31,11 +31,11 @@ export async function setNote(
       note: note || '',
     };
 
-    newNotes = [...notepad.notes, newNote];
+    newNotes = [...notepad.items, newNote];
   }
 
   await setNotepad({
     id: notepadId,
-    notes: newNotes,
+    items: newNotes,
   });
 }

@@ -5,14 +5,14 @@ import { IInfosNote, INote } from '../../../interfaces/notepad';
 export async function infosNote(): Promise<IInfosNote> {
   const notepads = await readAllNotepad();
 
-  let notes: INote[] = [];
+  let items: INote[] = [];
 
   notepads.forEach((notepad) => {
-    notes = [...notes, ...notepad.notes];
+    items = [...items, ...notepad.items];
   });
 
   const data = new Date().getTime();
-  const nextNote = notes.reduce((acc, note) => {
+  const nextNote = items.reduce((acc, note) => {
     if (!note.notification) return acc;
 
     if (note.notification.getTime() > data) {
@@ -27,7 +27,7 @@ export async function infosNote(): Promise<IInfosNote> {
   }, {} as INote);
 
   return {
-    notes: notes.length,
+    items: items.length,
     nextNote,
   };
 }

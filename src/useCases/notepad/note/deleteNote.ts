@@ -7,13 +7,13 @@ export async function deleteNote(
   const notepad = await readNotepad(notepadId);
   if (!notepad) throw new Error("Notepad doesn't exist.");
 
-  const isNoteInNotepad = notepad.notes.find((value) => value.id === noteId);
+  const isNoteInNotepad = notepad.items.find((value) => value.id === noteId);
   if (isNoteInNotepad) {
-    const newNotes = notepad.notes.filter((note) => note.id !== noteId);
+    const newNotes = notepad.items.filter((note) => note.id !== noteId);
 
     await setNotepad({
       id: notepadId,
-      notes: newNotes,
+      items: newNotes,
     });
   }
 }

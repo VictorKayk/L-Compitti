@@ -11,9 +11,9 @@ export async function setTodo(
 
   let newTodos: ITodo[] = [];
 
-  const isTodoInList = data.todos.find((todo) => todo.id === id);
+  const isTodoInList = data.items.find((todo) => todo.id === id);
   if (isTodoInList) {
-    newTodos = data.todos.map((todo) =>
+    newTodos = data.items.map((todo) =>
       todo.id === id
         ? {
             id,
@@ -31,11 +31,11 @@ export async function setTodo(
       notification: notification || null,
     };
 
-    newTodos = [...data.todos, todo];
+    newTodos = [...data.items, todo];
   }
 
   await setTodoList({
     id: listId,
-    todos: newTodos,
+    items: newTodos,
   });
 }

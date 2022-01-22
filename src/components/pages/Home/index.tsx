@@ -32,7 +32,7 @@ export function Home(): ReactElement {
       setNextTodo(infosNextTodo.name);
       console.log(unfinishedTodos, infosNextTodo);
 
-      const { notes: infosNotes, nextNote: infosNextNote } = await infosNote();
+      const { items: infosNotes, nextNote: infosNextNote } = await infosNote();
       setNote(infosNotes);
       setNextNote(infosNextNote.title);
       console.log(infosNotes, infosNextNote);

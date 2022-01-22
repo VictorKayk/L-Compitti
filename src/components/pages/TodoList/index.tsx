@@ -1,7 +1,27 @@
-import { ReactElement } from 'react';
-import { Outlet } from 'react-router-dom';
-import { TodoList as TodoListTemplate } from '../../ui/templates';
+import { ReactElement, useEffect, useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useTodo } from '../../../hooks/useCases';
+import { ITodoList } from '../../../interfaces/todo-list';
+import { ListPage } from '../../ui/templates';
 
 export default function TodoList(): ReactElement {
-  return <TodoListTemplate title="Todo-list" />;
+  const navigate = useNavigate();
+  const goBack = (): void => navigate(-1);
+
+  const [todoList, setTodosList] = useState([] as ITodoList[] | []);
+
+  const {
+    list: { setTodoList, readAllTodoList },
+    todo: { setTodo },
+  } = useTodo();
+
+  useEffect(() => {
+    async function getTodosList(): Promise<void> {
+      const allTodoList = await readAllTodoList();
+      setTodosList(allTodoList);
+    }
+    getTodosList();
+  }, [setTodosList, readAllTodoList]);
+
+  return <ListPage title="Todo-list" goBack={goBack} list={todoList} />;
 }

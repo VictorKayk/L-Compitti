@@ -5,5 +5,5 @@ export interface INotepad {
   name: string;
   color: string;
   notification: Date | null;
-  notes: INote[] | [];
+  items: INote[] | [];
 }

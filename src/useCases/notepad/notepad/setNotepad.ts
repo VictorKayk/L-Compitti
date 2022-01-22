@@ -10,7 +10,7 @@ export async function setNotepad({
   name,
   color,
   notification,
-  notes,
+  items,
 }: ISetNotepad): Promise<void> {
   const data = await readNotepadService(id);
 
@@ -19,7 +19,7 @@ export async function setNotepad({
     name: name || data?.name || '',
     color: color || data?.color || '',
     notification: notification || data?.notification || null,
-    notes: notes || data?.notes || [],
+    items: items || data?.items || [],
   };
 
   await setNotepadService(notepad);

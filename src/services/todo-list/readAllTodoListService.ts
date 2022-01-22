@@ -2,15 +2,15 @@ import { todoDatabase } from '../../config/localforage';
 import { ITodoList } from '../../interfaces/todo-list';
 
 export async function readAllTodoListService(): Promise<ITodoList[]> {
-  let todosLists: ITodoList[] = [];
+  let itemsLists: ITodoList[] = [];
   await todoDatabase.iterate((value: ITodoList, key) => {
-    todosLists = [
-      ...todosLists,
+    itemsLists = [
+      ...itemsLists,
       {
         ...value,
         id: key,
       },
     ];
   });
-  return todosLists;
+  return itemsLists;
 }

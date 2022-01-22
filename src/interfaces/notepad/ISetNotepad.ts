@@ -5,5 +5,5 @@ export interface ISetNotepad {
   name?: string;
   color?: string;
   notification?: Date | null;
-  notes?: INote[] | [];
+  items?: INote[] | [];
 }
