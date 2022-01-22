@@ -1,10 +1,13 @@
 import { ReactElement, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useTodo } from '../../../hooks/useCases';
 import { ITodoList } from '../../../interfaces/todo-list';
 import { ListPage } from '../../ui/templates';
 
 export default function TodoList(): ReactElement {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
   const goBack = (): void => navigate(-1);
 
@@ -23,5 +26,5 @@ export default function TodoList(): ReactElement {
     getTodosList();
   }, [setTodosList, readAllTodoList]);
 
-  return <ListPage title="Todo-list" goBack={goBack} list={todoList} />;
+  return <ListPage title={t('todo-list')} goBack={goBack} list={todoList} />;
 }
