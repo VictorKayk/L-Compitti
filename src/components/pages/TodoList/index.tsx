@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useTodo } from '../../../hooks/useCases';
 import { ITodoList } from '../../../interfaces/todo-list';
 import { ListPage } from '../../ui/templates';
@@ -14,8 +14,7 @@ export default function TodoList(): ReactElement {
   const [todoList, setTodosList] = useState([] as ITodoList[] | []);
 
   const {
-    list: { setTodoList, readAllTodoList },
-    todo: { setTodo },
+    list: { readAllTodoList },
   } = useTodo();
 
   useEffect(() => {

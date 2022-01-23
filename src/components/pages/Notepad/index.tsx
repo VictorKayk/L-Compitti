@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useNotepad } from '../../../hooks/useCases';
 import { INotepad } from '../../../interfaces/notepad';
 import { ListPage } from '../../ui/templates';
@@ -14,8 +14,7 @@ export default function Notepad(): ReactElement {
   const [notepad, setNotepadsList] = useState([] as INotepad[] | []);
 
   const {
-    notepad: { readAllNotepad, setNotepad },
-    note: { setNote },
+    notepad: { readAllNotepad },
   } = useNotepad();
 
   useEffect(() => {

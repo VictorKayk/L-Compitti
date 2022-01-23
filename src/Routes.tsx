@@ -44,16 +44,15 @@ export function AppRoutes(): ReactElement {
                 <TodoList />
               </Suspense>
             }
-          >
-            <Route
-              path=":list"
-              element={
-                <Suspense fallback={<Loading />}>
-                  <Todo />
-                </Suspense>
-              }
-            />
-          </Route>
+          />
+          <Route
+            path="todo/:list"
+            element={
+              <Suspense fallback={<Loading />}>
+                <Todo />
+              </Suspense>
+            }
+          />
           <Route
             path="notepad"
             element={
@@ -61,24 +60,23 @@ export function AppRoutes(): ReactElement {
                 <Notepad />
               </Suspense>
             }
+          />
+          <Route
+            path="/notepad/:notes"
+            element={
+              <Suspense fallback={<Loading />}>
+                <Notes />
+              </Suspense>
+            }
           >
             <Route
-              path=":notes"
+              path="/notepad/:notes/:id"
               element={
                 <Suspense fallback={<Loading />}>
-                  <Notes />
+                  <Note />
                 </Suspense>
               }
-            >
-              <Route
-                path=":id"
-                element={
-                  <Suspense fallback={<Loading />}>
-                    <Note />
-                  </Suspense>
-                }
-              />
-            </Route>
+            />
           </Route>
           <Route
             path="pomodoro"
