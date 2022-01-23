@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { INotepad } from '../../../../interfaces/notepad';
 import { ITodoList } from '../../../../interfaces/todo-list';
-import { List } from '../../molecules/List';
+import { List } from '../../molecules';
 import { PageTitleAndReturn } from '../../molecules/PageTitleAndReturn';
 import { Container, PageTitleAndReturnContainer } from './style';
 

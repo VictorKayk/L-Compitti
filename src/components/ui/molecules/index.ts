@@ -5,6 +5,8 @@ import { Logo } from './Logo';
 import { PageTitleAndQuote } from './PageTitleAndQuote';
 import { TitleAndNumber } from './TitleAndNumber';
 import { TitleLink } from './TitleLink';
+import { List } from './List';
+import { Item } from './Item';
 
 export {
   MenuIcon,
@@ -14,4 +16,6 @@ export {
   PageTitleAndQuote,
   TitleAndNumber,
   TitleLink,
+  List,
+  Item,
 };

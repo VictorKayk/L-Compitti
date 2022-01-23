@@ -25,5 +25,5 @@ export default function TodoList(): ReactElement {
     getTodosList();
   }, [setTodosList, readAllTodoList]);
 
-  return <ListPage title={t('todo-list')} goBack={goBack} list={todoList} />;
+  return <ListPage title={t('todo-lists')} goBack={goBack} list={todoList} />;
 }
