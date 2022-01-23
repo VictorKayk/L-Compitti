@@ -4,7 +4,7 @@ import { INote, ISetNote } from '../../../interfaces/notepad';
 
 export async function setNote(
   notepadId: string,
-  { id, title, notification, note }: ISetNote
+  { id, name, notification, note }: ISetNote
 ): Promise<void> {
   const notepad = await readNotepad(notepadId);
   if (!notepad) throw new Error("Notepad doesn't exist.");
@@ -17,7 +17,7 @@ export async function setNote(
       value.id === id
         ? {
             id,
-            title: title || value.title,
+            name: name || value.name,
             notification: notification || value.notification,
             note: note || value.note,
           }
@@ -26,7 +26,7 @@ export async function setNote(
   } else {
     const newNote: INote = {
       id: uuid(),
-      title: title || '',
+      name: name || '',
       notification: notification || null,
       note: note || '',
     };

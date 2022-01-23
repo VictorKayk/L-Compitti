@@ -1,6 +1,6 @@
 export interface ISetNote {
   id?: string;
-  title?: string;
+  name?: string;
   notification?: Date | null;
   note?: string;
 }

@@ -9,7 +9,7 @@ export default function TodoList(): ReactElement {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
-  const goBack = (): void => navigate(-1);
+  const goBack = (): void => navigate('/');
 
   const [todoList, setTodosList] = useState([] as ITodoList[] | []);
 
