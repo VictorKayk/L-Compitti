@@ -6,7 +6,7 @@ import { PageTitleAndQuote } from './PageTitleAndQuote';
 import { TitleAndNumber } from './TitleAndNumber';
 import { TitleLink } from './TitleLink';
 import { List } from './List';
-import { Item } from './Item';
+import { CloseButton } from './CloseButton';
 
 export {
   MenuIcon,
@@ -17,5 +17,5 @@ export {
   TitleAndNumber,
   TitleLink,
   List,
-  Item,
+  CloseButton,
 };

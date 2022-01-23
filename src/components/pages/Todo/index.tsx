@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTodo } from '../../../hooks/useCases';
@@ -11,23 +11,55 @@ export default function Todo(): ReactElement {
   const navigate = useNavigate();
   const goBack = (): void => navigate(-1);
 
-  const params = useParams();
+  const params = useParams() as { list: string };
 
   const [todoList, setTodoList] = useState({} as ITodoList | null);
 
   const {
     list: { readTodoList },
+    todo: { setTodo, deleteTodo },
   } = useTodo();
 
-  useEffect(() => {
-    async function getTodo(): Promise<void> {
+  const getTodo = useCallback(async (): Promise<void> => {
+    const todoListData = await readTodoList(params.list);
+    setTodoList(todoListData);
+  }, [params.list, readTodoList]);
+
+  const handleChangeItems = useCallback(
+    async (id: string): Promise<void> => {
       const todoListData = await readTodoList(params.list);
-      setTodoList(todoListData);
-    }
+      const item = todoListData?.items?.find((value) => value.id === id);
+
+      await setTodo(params.list, {
+        id,
+        isFinished: !item?.isFinished,
+      });
+
+      await getTodo();
+    },
+    [getTodo, params.list, readTodoList, setTodo]
+  );
+
+  const handleDeleteItems = useCallback(
+    async (id: string): Promise<void> => {
+      await deleteTodo(params.list, id);
+
+      await getTodo();
+    },
+    [getTodo, params.list, deleteTodo]
+  );
+
+  useEffect(() => {
     getTodo();
-  }, [params.list, setTodoList, readTodoList]);
+  }, [getTodo]);
 
-  console.log(params, todoList);
-
-  return <ListItem title={t('todo-list')} goBack={goBack} item={todoList} />;
+  return (
+    <ListItem
+      title={t('todo-list')}
+      goBack={goBack}
+      item={todoList}
+      handleChangeItems={handleChangeItems}
+      handleDeleteItems={handleDeleteItems}
+    />
+  );
 }

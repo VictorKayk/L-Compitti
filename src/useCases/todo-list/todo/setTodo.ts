@@ -18,7 +18,7 @@ export async function setTodo(
         ? {
             id,
             name: name || todo.name,
-            isFinished: isFinished || todo.isFinished,
+            isFinished: isFinished !== undefined ? isFinished : todo.isFinished,
             notification: notification || todo.notification,
           }
         : todo
@@ -27,7 +27,7 @@ export async function setTodo(
     const todo: ITodo = {
       id: uuid(),
       name: name || '',
-      isFinished: isFinished || false,
+      isFinished: isFinished !== undefined ? isFinished : false,
       notification: notification || null,
     };
 
