@@ -68,16 +68,15 @@ export function AppRoutes(): ReactElement {
                 <Notes />
               </Suspense>
             }
-          >
-            <Route
-              path="/notepad/:notes/:id"
-              element={
-                <Suspense fallback={<Loading />}>
-                  <Note />
-                </Suspense>
-              }
-            />
-          </Route>
+          />
+          <Route
+            path="/notepad/:notes/:id"
+            element={
+              <Suspense fallback={<Loading />}>
+                <Note />
+              </Suspense>
+            }
+          />
           <Route
             path="pomodoro"
             element={
