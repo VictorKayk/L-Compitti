@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { ITodoList } from '../../../../interfaces/todo-list';
+import { INotepad } from '../../../../interfaces/notepad';
 import { Items } from '../../atoms/Items';
 import { TitleAndNumber } from '../../molecules';
 import { PageTitleAndReturn } from '../../molecules/PageTitleAndReturn';
@@ -13,9 +14,9 @@ import {
 interface IListItem {
   title: string;
   goBack: () => void;
-  item: ITodoList | null;
-  handleChangeItems: (id: string) => Promise<void>;
-  handleDeleteItems: (id: string) => Promise<void>;
+  item: ITodoList | INotepad | null;
+  handleChangeItems?: (id: string) => Promise<void>;
+  handleDeleteItems?: (id: string) => Promise<void>;
 }
 
 export function ListItem({
@@ -42,6 +43,7 @@ export function ListItem({
           handleChangeItems={handleChangeItems}
           handleDeleteItems={handleDeleteItems}
           deleteButton
+          noteList
         />
       </ItemContainer>
     </Container>

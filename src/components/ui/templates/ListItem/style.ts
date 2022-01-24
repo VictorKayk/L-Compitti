@@ -9,9 +9,9 @@ export const Container = styled.main`
 export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.5rem;
 
-  padding: 0 1.875rem;
+  padding: 0 1.8125rem 2.25rem;
 `;
 
 export const PageTitleAndReturnContainer = styled.div`

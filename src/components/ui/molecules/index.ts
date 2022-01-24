@@ -7,6 +7,7 @@ import { TitleAndNumber } from './TitleAndNumber';
 import { TitleLink } from './TitleLink';
 import { List } from './List';
 import { CloseButton } from './CloseButton';
+import { TitleAndDate } from './TitleAndDate';
 
 export {
   MenuIcon,
@@ -17,5 +18,6 @@ export {
   TitleAndNumber,
   TitleLink,
   List,
+  TitleAndDate,
   CloseButton,
 };
