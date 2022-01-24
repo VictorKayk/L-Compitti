@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTodo } from '../../../hooks/useCases';
 import { ITodoList } from '../../../interfaces/todo-list';
-import { ListItem } from '../../ui/templates';
+import { ListItems } from '../../ui/templates';
 
 export default function Todo(): ReactElement {
   const { t } = useTranslation();
@@ -54,7 +54,7 @@ export default function Todo(): ReactElement {
   }, [getTodo]);
 
   return (
-    <ListItem
+    <ListItems
       title={t('todo-list')}
       goBack={goBack}
       item={todoList}

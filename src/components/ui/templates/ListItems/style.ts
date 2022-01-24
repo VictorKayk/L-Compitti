@@ -9,7 +9,7 @@ export const Container = styled.main`
 export const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.9375rem;
+  gap: 2.5rem;
 
   padding: 0 1.8125rem 2.25rem;
 `;
@@ -22,14 +22,9 @@ export const PageTitleAndReturnContainer = styled.div`
   padding: 1.25rem 1.875rem 0;
 `;
 
-export const TitleAndDateContainer = styled.div`
+export const TitleAndNumberContainer = styled.div`
   h3,
   h4 {
     font-size: 30px;
   }
-`;
-
-export const NoteContainer = styled.div`
-  text-indent: 20px;
-  padding: 0 0.3rem;
 `;

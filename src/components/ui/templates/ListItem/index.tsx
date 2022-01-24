@@ -1,50 +1,35 @@
 import { ReactElement } from 'react';
-import { ITodoList } from '../../../../interfaces/todo-list';
-import { INotepad } from '../../../../interfaces/notepad';
-import { Items } from '../../atoms/Items';
-import { TitleAndNumber } from '../../molecules';
+import { INote } from '../../../../interfaces/notepad';
+import { TitleAndDate } from '../../molecules';
 import { PageTitleAndReturn } from '../../molecules/PageTitleAndReturn';
 import {
   Container,
   ItemContainer,
   PageTitleAndReturnContainer,
-  TitleAndNumberContainer,
+  TitleAndDateContainer,
+  NoteContainer,
 } from './style';
 
 interface IListItem {
   title: string;
   goBack: () => void;
-  item: ITodoList | INotepad | null;
-  handleChangeItems?: (id: string) => Promise<void>;
-  handleDeleteItems?: (id: string) => Promise<void>;
+  item: INote | null;
 }
 
-export function ListItem({
-  title,
-  goBack,
-  item,
-  handleChangeItems,
-  handleDeleteItems,
-}: IListItem): ReactElement {
+export function ListItem({ title, goBack, item }: IListItem): ReactElement {
   return (
     <Container>
       <PageTitleAndReturnContainer>
         <PageTitleAndReturn title={title} goBack={goBack} />
       </PageTitleAndReturnContainer>
       <ItemContainer>
-        <TitleAndNumberContainer className="title">
-          <TitleAndNumber
+        <TitleAndDateContainer className="title">
+          <TitleAndDate
             title={item?.name || ''}
-            number={item?.items?.length || 0}
+            date={item?.notification || null}
           />
-        </TitleAndNumberContainer>
-        <Items
-          items={item?.items || []}
-          handleChangeItems={handleChangeItems}
-          handleDeleteItems={handleDeleteItems}
-          deleteButton
-          noteList
-        />
+        </TitleAndDateContainer>
+        <NoteContainer>{item?.note}</NoteContainer>
       </ItemContainer>
     </Container>
   );

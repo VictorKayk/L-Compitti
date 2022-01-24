@@ -31,8 +31,8 @@ export function Items({
   const Content = items.map(({ id, name, isFinished, note, notification }) => {
     if (isFinished !== undefined)
       return (
-        <ItemContainer>
-          <ItemCheckboxContainer key={id}>
+        <ItemContainer key={id}>
+          <ItemCheckboxContainer>
             <input
               type="checkbox"
               name={id}
@@ -54,7 +54,7 @@ export function Items({
     if (noteList && note) {
       const newNote = note.slice(0, 125);
       return (
-        <Link to={id}>
+        <Link to={id} key={id}>
           <NoteAndTitleContainer>
             <div className="color">
               <TitleAndDate title={name} date={notification} />
@@ -66,7 +66,7 @@ export function Items({
         </Link>
       );
     }
-    return note && <p>{name}</p>;
+    return note && <p key={id}>{name}</p>;
   });
   return <Container>{Content}</Container>;
 }

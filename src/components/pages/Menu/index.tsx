@@ -13,7 +13,7 @@ export default function Menu(): ReactElement {
         linkTo: '/todo',
       }}
       note={{
-        title: t('note'),
+        title: t('notes'),
         linkTo: '/notepad',
       }}
       pomodoro={{
