@@ -16,7 +16,7 @@ interface INotepadFunctions {
 interface INoteFunctions {
   setNote: (
     notepadId: string,
-    { id, title, notification, note }: ISetNote
+    { id, name, notification, note }: ISetNote
   ) => Promise<void>;
   deleteNote: (notepadId: string, noteId: string) => Promise<void>;
   infosNote(): Promise<IInfosNote>;

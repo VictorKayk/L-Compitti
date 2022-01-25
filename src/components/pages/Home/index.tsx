@@ -34,7 +34,7 @@ export function Home(): ReactElement {
 
       const { items: infosNotes, nextNote: infosNextNote } = await infosNote();
       setNote(infosNotes);
-      setNextNote(infosNextNote.title);
+      setNextNote(infosNextNote.name);
       console.log(infosNotes, infosNextNote);
 
       const { todayPomodoros, lastPomodoro: infosLastPomodoro } =
