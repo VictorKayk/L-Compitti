@@ -16,7 +16,7 @@ export default function Todo(): ReactElement {
   const [todoList, setTodoList] = useState({} as ITodoList | null);
 
   const {
-    list: { readTodoList },
+    list: { readTodoList, deleteTodoList },
     todo: { setTodo, deleteTodo },
   } = useTodo();
 
@@ -49,6 +49,12 @@ export default function Todo(): ReactElement {
     [getTodo, params.list, deleteTodo]
   );
 
+  const removeTodoList = useCallback(async (): Promise<void> => {
+    await deleteTodoList(params.list);
+
+    navigate(-1);
+  }, [navigate, params.list, deleteTodoList]);
+
   useEffect(() => {
     getTodo();
   }, [getTodo]);
@@ -60,6 +66,12 @@ export default function Todo(): ReactElement {
       item={todoList}
       handleChangeItems={handleChangeItems}
       handleDeleteItems={handleDeleteItems}
+      helpActions={[
+        {
+          name: t('remove-todo-list'),
+          handleClick: removeTodoList,
+        },
+      ]}
     />
   );
 }
