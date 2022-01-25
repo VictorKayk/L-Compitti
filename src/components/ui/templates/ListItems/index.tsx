@@ -10,6 +10,8 @@ import {
   PageTitleAndReturnContainer,
   TitleAndNumberContainer,
 } from './style';
+import { DetectClickOutside } from '../../atoms';
+import { HelpIcon } from '../../molecules/HelpIcon';
 
 interface IListItems {
   title: string;
@@ -17,6 +19,10 @@ interface IListItems {
   item: ITodoList | INotepad | null;
   handleChangeItems?: (id: string) => Promise<void>;
   handleDeleteItems?: (id: string) => Promise<void>;
+  helpActions: {
+    name: string;
+    handleClick: () => void;
+  }[];
 }
 
 export function ListItems({
@@ -25,6 +31,7 @@ export function ListItems({
   item,
   handleChangeItems,
   handleDeleteItems,
+  helpActions,
 }: IListItems): ReactElement {
   return (
     <Container>
@@ -46,6 +53,9 @@ export function ListItems({
           noteList
         />
       </ItemContainer>
+      <DetectClickOutside>
+        <HelpIcon actions={helpActions} />
+      </DetectClickOutside>
     </Container>
   );
 }
