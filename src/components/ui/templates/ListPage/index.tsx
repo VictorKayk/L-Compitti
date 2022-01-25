@@ -11,16 +11,25 @@ interface IListPage {
   title: string;
   goBack: () => void;
   list: ITodoList[] | INotepad[];
+  helpActions: {
+    name: string;
+    handleClick: () => void;
+  }[];
 }
 
-export function ListPage({ title, goBack, list }: IListPage): ReactElement {
+export function ListPage({
+  title,
+  goBack,
+  list,
+  helpActions,
+}: IListPage): ReactElement {
   return (
     <Container>
       <PageTitleAndReturnContainer>
         <PageTitleAndReturn title={title} goBack={goBack} />
       </PageTitleAndReturnContainer>
       <DetectClickOutside>
-        <HelpIcon />
+        <HelpIcon actions={helpActions} />
       </DetectClickOutside>
       <List list={list} />
     </Container>

@@ -1,0 +1,69 @@
+import { yupResolver } from '@hookform/resolvers/yup';
+import { ReactElement } from 'react';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import Modal from 'react-modal';
+import { AnyObjectSchema } from 'yup';
+import { CloseButton } from '..';
+import { Title } from '../../atoms';
+import { Header, Container, Form } from './style';
+
+Modal.setAppElement('#root');
+
+interface IModalSingleText {
+  isOpen: boolean;
+  closeModal: () => void;
+  title: string;
+  labelTitle: string;
+  submitButton: string;
+  defaultTextValue?: string;
+  onSubmit: SubmitHandler<FieldValues>;
+  schema: AnyObjectSchema;
+}
+
+export function ModalSingleText({
+  isOpen,
+  closeModal,
+  schema,
+  onSubmit,
+  title,
+  labelTitle,
+  submitButton,
+  defaultTextValue = '',
+}: IModalSingleText): ReactElement {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      text: defaultTextValue,
+    },
+    resolver: yupResolver(schema),
+  });
+
+  return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={closeModal}
+      className="react-modal"
+      overlayClassName="react-overlay"
+    >
+      <Container>
+        <Header>
+          <Title title={title} />
+          <CloseButton handleDelete={closeModal} />
+        </Header>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <div>
+            <label htmlFor="text">{labelTitle}:</label>
+            <input type="text" id="text" {...register('text')} />
+            <p>{errors.text?.message}</p>
+          </div>
+          <button type="submit">
+            <span>{submitButton}</span>
+          </button>
+        </Form>
+      </Container>
+    </Modal>
+  );
+}

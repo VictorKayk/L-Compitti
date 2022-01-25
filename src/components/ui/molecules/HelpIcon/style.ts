@@ -52,4 +52,6 @@ export const ButtonMenu = styled.button`
   height: 100%;
 `;
 
-export const Button = styled.button``;
+export const Button = styled.button`
+  color: ${({ theme }) => theme.colors.primary};
+`;

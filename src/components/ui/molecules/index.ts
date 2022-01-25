@@ -8,6 +8,7 @@ import { TitleLink } from './TitleLink';
 import { List } from './List';
 import { CloseButton } from './CloseButton';
 import { TitleAndDate } from './TitleAndDate';
+import { ModalSingleText } from './ModalSingleText';
 
 export {
   MenuIcon,
@@ -20,4 +21,5 @@ export {
   List,
   TitleAndDate,
   CloseButton,
+  ModalSingleText,
 };

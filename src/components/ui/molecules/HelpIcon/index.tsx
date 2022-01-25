@@ -12,28 +12,24 @@ import {
 interface IHelpIcon {
   isOpen?: boolean;
   toggle?: () => void;
+  actions: {
+    name: string;
+    handleClick: () => void;
+  }[];
 }
 
-export function HelpIcon({ isOpen, toggle }: IHelpIcon): ReactElement {
+export function HelpIcon({ isOpen, toggle, actions }: IHelpIcon): ReactElement {
   return (
     <Container>
       {isOpen && (
         <MenuContainer>
-          <ButtonMenuContainer>
-            <ButtonMenu>
-              <span>Teste</span>
-            </ButtonMenu>
-          </ButtonMenuContainer>
-          <ButtonMenuContainer>
-            <ButtonMenu>
-              <span>Teste</span>
-            </ButtonMenu>
-          </ButtonMenuContainer>
-          <ButtonMenuContainer>
-            <ButtonMenu>
-              <span>Teste</span>
-            </ButtonMenu>
-          </ButtonMenuContainer>
+          {actions.map(({ name, handleClick }) => (
+            <ButtonMenuContainer key={name}>
+              <ButtonMenu onClick={handleClick}>
+                <span>{name}</span>
+              </ButtonMenu>
+            </ButtonMenuContainer>
+          ))}
         </MenuContainer>
       )}
       <Button onClick={toggle}>
