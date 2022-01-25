@@ -44,7 +44,7 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.background.colors.primary};
     color: ${({ theme }) => theme.colors.primary};
   }
-
+  
   body, input, textarea, select, button {
     font: ${({ theme }) => theme.fonts.weight.primary} ${({ theme }) =>
   theme.fonts.sizes.primary} ${({ theme }) => theme.fonts.family.primary};
@@ -68,4 +68,26 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+
+  .react-overlay {
+    background: rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .react-modal {
+    width: 90%;
+    background: ${({ theme }) => theme.background.colors.primary};
+    padding: 3rem 1.25rem;
+    border-radius: 0.25rem;
+  }
+
 `;
