@@ -55,6 +55,14 @@
     "react/require-default-props": [
       0,
       { "forbidDefaultForRequired": false, "ignoreFunctionalComponents": false }
+    ],
+    "react/jsx-props-no-spreading": [
+      0,
+      {
+        "html": "ignore",
+        "custom": "ignore",
+        "explicitSpread": "ignore"
+      }
     ]
   },
   "settings": {
