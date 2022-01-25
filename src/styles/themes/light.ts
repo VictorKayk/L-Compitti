@@ -12,6 +12,7 @@ export const light: DefaultTheme = {
   },
   colors: {
     primary: '#181826',
+    secondary: '#303342',
     gradient: {
       primary: '#C22ED0',
       secondary: '#5FFAE0',

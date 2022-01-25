@@ -10,6 +10,7 @@ declare module 'styled-components' {
     };
     colors: {
       primary: string;
+      secondary: string;
       gradient: {
         primary: string;
         secondary: string;

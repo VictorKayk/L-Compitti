@@ -12,6 +12,7 @@ export const dark: DefaultTheme = {
   },
   colors: {
     primary: '#fcfcfc',
+    secondary: '#EEE6E6',
     gradient: {
       primary: '#C22ED0',
       secondary: '#5FFAE0',
