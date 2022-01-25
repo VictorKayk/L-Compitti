@@ -6,6 +6,8 @@ import { Title } from './Title';
 import { Subtitle } from './Subtitle';
 import { ListedItem } from './ListedItem';
 import { HeaderContainer } from './HeaderContainer';
+import { IconThemedComponent } from './IconThemedComponent';
+import { DetectClickOutside } from './DetectClickOutside';
 
 export {
   Loading,
@@ -16,4 +18,6 @@ export {
   Subtitle,
   ListedItem,
   HeaderContainer,
+  IconThemedComponent,
+  DetectClickOutside,
 };
