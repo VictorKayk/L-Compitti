@@ -7,9 +7,23 @@
   "default_locale": "en",
   "action": {
     "default_popup": "index.html",
-    "default_title": "__MSG_extName__"
+    "default_title": "__MSG_extName__",
+    "default_icon": {
+      "16": "/images/icons/16.png",
+      "32": "/images/icons/32.png",
+      "48": "/images/icons/48.png",
+      "128": "/images/icons/128.png"
+    }
   },
-  "homepage_url": "https://github.com/VictorKayk/L-Compiti",
+  "icons": {
+    "16": "/images/icons/16.png",
+    "32": "/images/icons/32.png",
+    "48": "/images/icons/48.png",
+    "128": "/images/icons/128.png"
+  },
+  "homepage_url": "https://github.com/VictorKayk/L-Compitti",
 
-  "author": "Victor Kayk da Silva"
+  "author": "Victor Kayk da Silva",
+
+  "permissions": ["storage"]
 }
