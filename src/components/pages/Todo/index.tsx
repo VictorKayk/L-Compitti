@@ -1,8 +1,10 @@
 import { ReactElement, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
+import * as yup from 'yup';
 import { useTodo } from '../../../hooks/useCases';
 import { ITodoList } from '../../../interfaces/todo-list';
+import { ModalSingleText } from '../../ui/molecules';
 import { ListItems } from '../../ui/templates';
 
 export default function Todo(): ReactElement {
@@ -13,16 +15,25 @@ export default function Todo(): ReactElement {
 
   const params = useParams() as { list: string };
 
-  const [todoList, setTodoList] = useState({} as ITodoList | null);
+  const [todoLists, setTodoLists] = useState({} as ITodoList | null);
+
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const openEditModal = useCallback(async (): Promise<void> => {
+    setIsEditModalOpen(true);
+  }, []);
+
+  const closeEditModal = useCallback(async (): Promise<void> => {
+    setIsEditModalOpen(false);
+  }, []);
 
   const {
-    list: { readTodoList, deleteTodoList },
+    list: { readTodoList, deleteTodoList, setTodoList },
     todo: { setTodo, deleteTodo },
   } = useTodo();
 
   const getTodo = useCallback(async (): Promise<void> => {
     const todoListData = await readTodoList(params.list);
-    setTodoList(todoListData);
+    setTodoLists(todoListData);
   }, [params.list, readTodoList]);
 
   const handleChangeItems = useCallback(
@@ -55,23 +66,61 @@ export default function Todo(): ReactElement {
     navigate(-1);
   }, [navigate, params.list, deleteTodoList]);
 
+  const editTodoList = useCallback(
+    async ({ text }): Promise<void> => {
+      await setTodoList({
+        id: params.list,
+        name: text,
+      });
+      closeEditModal();
+      await getTodo();
+    },
+    [getTodo, params.list, closeEditModal, setTodoList]
+  );
+
   useEffect(() => {
     getTodo();
   }, [getTodo]);
 
+  const schema = yup
+    .object({
+      text: yup
+        .string()
+        .min(2, t('error-name-todo-min'))
+        .max(25, t('error-name-todo-max'))
+        .required(),
+    })
+    .required();
+
   return (
-    <ListItems
-      title={t('todo-list')}
-      goBack={goBack}
-      item={todoList}
-      handleChangeItems={handleChangeItems}
-      handleDeleteItems={handleDeleteItems}
-      helpActions={[
-        {
-          name: t('remove-todo-list'),
-          handleClick: removeTodoList,
-        },
-      ]}
-    />
+    <>
+      <ListItems
+        title={t('todo-list')}
+        goBack={goBack}
+        item={todoLists}
+        handleChangeItems={handleChangeItems}
+        handleDeleteItems={handleDeleteItems}
+        helpActions={[
+          {
+            name: t('edit-todo-list'),
+            handleClick: openEditModal,
+          },
+          {
+            name: t('remove-todo-list'),
+            handleClick: removeTodoList,
+          },
+        ]}
+      />
+
+      <ModalSingleText
+        isOpen={isEditModalOpen}
+        closeModal={closeEditModal}
+        title={t('edit-todo-list')}
+        onSubmit={editTodoList}
+        labelTitle={t('todo-list-name')}
+        submitButton={t('edit')}
+        schema={schema}
+      />
+    </>
   );
 }
