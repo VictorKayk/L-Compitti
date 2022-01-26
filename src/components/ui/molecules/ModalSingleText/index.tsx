@@ -44,7 +44,6 @@ export function ModalSingleText({
         <Header>
           <Title title={title} />
           <CloseButton handleDelete={closeModal} />
-          <CloseButton handleDelete={closeModal} />
         </Header>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <div>
