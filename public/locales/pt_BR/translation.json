@@ -46,6 +46,8 @@
     "error-name-notepad-max": "O nome do bloco de notas teve conter no máximo 25 caracteres.",
     "error-name-note-min": "O nome da nota teve conter pelo menos 2 caracteres.",
     "error-name-note-max": "O nome da nota teve conter no máximo 25 caracteres.",
+    "error-note-min": "A nota teve conter pelo menos 2 caracteres.",
+    "error-note-max": "A nota teve conter no máximo 10000 caracteres.",
     "pomodoro": "Pomodoro"
   }
 }

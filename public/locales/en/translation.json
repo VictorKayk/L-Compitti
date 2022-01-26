@@ -29,8 +29,8 @@
     "edit-todo": "Edit to-do'",
     "error-name-todo-list-min": "To-do's list name must at least contains 2 characters.",
     "error-name-todo-list-max": "To-do's list name must contains max 25 characters.",
-    "error-name-todo-min": "To-do name must at least contains 2 characters.",
-    "error-name-todo-max": "To-do name must contains max 25 characters.",
+    "error-name-todo-min": "To-do's name must at least contains 2 characters.",
+    "error-name-todo-max": "To-do's name must contains max 25 characters.",
     "notepad": "Notepad",
     "notes": "Notes",
     "note": "Note",
@@ -42,10 +42,12 @@
     "create-note": "Create note",
     "remove-note": "Remove note",
     "edit-note": "Edit note",
-    "error-name-notepad-min": "Notepad name must at least contains 2 characters.",
-    "error-name-notepad-max": "Notepad name must contains max 25 characters.",
-    "error-name-note-min": "Note name must at least contains 2 characters.",
-    "error-name-note-max": "Note name must contains max 25 characters.",
+    "error-name-notepad-min": "Notepad's name must at least contains 2 characters.",
+    "error-name-notepad-max": "Notepad's name must contains max 25 characters.",
+    "error-name-note-min": "Note's name must at least contains 2 characters.",
+    "error-name-note-max": "Note's name must contains max 25 characters.",
+    "error-note-min": "Note's must at least contains 2 characters.",
+    "error-note-max": "Note's must contains max 10000 characters.",
     "pomodoro": "Pomodoro"
   }
 }
