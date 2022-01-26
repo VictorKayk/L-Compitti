@@ -1,6 +1,8 @@
 import { ReactElement } from 'react';
 import { INote } from '../../../../interfaces/notepad';
+import { DetectClickOutside } from '../../atoms';
 import { TitleAndDate } from '../../molecules';
+import { HelpIcon } from '../../molecules/HelpIcon';
 import { PageTitleAndReturn } from '../../molecules/PageTitleAndReturn';
 import {
   Container,
@@ -14,9 +16,18 @@ interface IListItem {
   title: string;
   goBack: () => void;
   item: INote | null;
+  helpActions: {
+    name: string;
+    handleClick: () => void;
+  }[];
 }
 
-export function ListItem({ title, goBack, item }: IListItem): ReactElement {
+export function ListItem({
+  title,
+  goBack,
+  item,
+  helpActions,
+}: IListItem): ReactElement {
   return (
     <Container>
       <PageTitleAndReturnContainer>
@@ -31,6 +42,9 @@ export function ListItem({ title, goBack, item }: IListItem): ReactElement {
         </TitleAndDateContainer>
         <NoteContainer>{item?.note}</NoteContainer>
       </ItemContainer>
+      <DetectClickOutside>
+        <HelpIcon actions={helpActions} />
+      </DetectClickOutside>
     </Container>
   );
 }
