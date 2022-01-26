@@ -28,7 +28,7 @@ export default function Note(): ReactElement {
 
   const {
     notepad: { readNotepad },
-    note: { setNote },
+    note: { setNote, deleteNote },
   } = useNotepad();
 
   const getNotepad = useCallback(async (): Promise<void> => {
@@ -43,6 +43,11 @@ export default function Note(): ReactElement {
     getNotepad();
   }, [getNotepad]);
 
+  const removeNote = useCallback(async (): Promise<void> => {
+    await deleteNote(params.notes, params.id);
+    navigate(-1);
+  }, [params, deleteNote, navigate]);
+
   const editNote = useCallback(
     async ({ text, textarea }): Promise<void> => {
       await setNote(params.notes, {
@@ -54,7 +59,7 @@ export default function Note(): ReactElement {
       closeEditModal();
       await getNotepad();
     },
-    [getNotepad, params.notes, closeEditModal, setNote]
+    [getNotepad, params, closeEditModal, setNote]
   );
 
   const editSchema = yup.object({
@@ -75,6 +80,10 @@ export default function Note(): ReactElement {
           {
             name: t('edit-note'),
             handleClick: openEditModal,
+          },
+          {
+            name: t('remove-note'),
+            handleClick: removeNote,
           },
         ]}
       />
