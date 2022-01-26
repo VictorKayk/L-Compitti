@@ -26,6 +26,15 @@ export default function Todo(): ReactElement {
     setIsEditModalOpen(false);
   }, []);
 
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const openCreateModal = useCallback(async (): Promise<void> => {
+    setIsCreateModalOpen(true);
+  }, []);
+
+  const closeCreateModal = useCallback(async (): Promise<void> => {
+    setIsCreateModalOpen(false);
+  }, []);
+
   const {
     list: { readTodoList, deleteTodoList, setTodoList },
     todo: { setTodo, deleteTodo },
@@ -78,11 +87,34 @@ export default function Todo(): ReactElement {
     [getTodo, params.list, closeEditModal, setTodoList]
   );
 
+  const createTodoList = useCallback(
+    async ({ text }): Promise<void> => {
+      await setTodo(params.list, {
+        name: text,
+        isFinished: false,
+        notification: null,
+      });
+      closeCreateModal();
+      await getTodo();
+    },
+    [getTodo, params.list, closeCreateModal, setTodo]
+  );
+
   useEffect(() => {
     getTodo();
   }, [getTodo]);
 
-  const schema = yup
+  const editSchema = yup
+    .object({
+      text: yup
+        .string()
+        .min(2, t('error-name-todo-list-min'))
+        .max(25, t('error-name-todo-list-max'))
+        .required(),
+    })
+    .required();
+
+  const createSchema = yup
     .object({
       text: yup
         .string()
@@ -102,6 +134,10 @@ export default function Todo(): ReactElement {
         handleDeleteItems={handleDeleteItems}
         helpActions={[
           {
+            name: t('create-todo'),
+            handleClick: openCreateModal,
+          },
+          {
             name: t('edit-todo-list'),
             handleClick: openEditModal,
           },
@@ -119,7 +155,17 @@ export default function Todo(): ReactElement {
         onSubmit={editTodoList}
         labelTitle={t('todo-list-name')}
         submitButton={t('edit')}
-        schema={schema}
+        schema={editSchema}
+      />
+
+      <ModalSingleText
+        isOpen={isCreateModalOpen}
+        closeModal={closeCreateModal}
+        title={t('create-todo')}
+        onSubmit={createTodoList}
+        labelTitle={t('todo-name')}
+        submitButton={t('create')}
+        schema={createSchema}
       />
     </>
   );
