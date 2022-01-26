@@ -30,22 +30,19 @@ export function Home(): ReactElement {
       const { unfinishedTodos, nextTodo: infosNextTodo } = await infosTodo();
       setTodo(unfinishedTodos);
       setNextTodo(infosNextTodo.name);
-      console.log(unfinishedTodos, infosNextTodo);
 
       const { items: infosNotes, nextNote: infosNextNote } = await infosNote();
       setNote(infosNotes);
       setNextNote(infosNextNote.name);
-      console.log(infosNotes, infosNextNote);
 
       const { todayPomodoros, lastPomodoro: infosLastPomodoro } =
         await infosPomodoro();
       setPomodoro(todayPomodoros);
       setLastPomodoro(infosLastPomodoro.type || '');
-      console.log(todayPomodoros, infosLastPomodoro);
     }
 
     getInfos();
-  }, []);
+  }, [infosNote, infosPomodoro, infosTodo]);
 
   return (
     <HomeTemplate

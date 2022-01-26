@@ -12,7 +12,6 @@ export async function getAllConfigsService(): Promise<IConfig[] | []> {
   });
 
   configs = await Promise.all(configsPromise);
-  console.log(configs);
 
   return configs;
 }
