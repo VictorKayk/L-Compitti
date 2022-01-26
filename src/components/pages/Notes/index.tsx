@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useNotepad } from '../../../hooks/useCases';
@@ -16,7 +16,7 @@ export default function Notepad(): ReactElement {
   const [notepad, setNotepad] = useState({} as INotepad | null);
 
   const {
-    notepad: { readNotepad },
+    notepad: { readNotepad, deleteNotepad },
   } = useNotepad();
 
   useEffect(() => {
@@ -27,5 +27,23 @@ export default function Notepad(): ReactElement {
     getNotepad();
   }, [params.notes, setNotepad, readNotepad]);
 
-  return <ListItems title={t('notes')} goBack={goBack} item={notepad} />;
+  const removeNotepad = useCallback(async (): Promise<void> => {
+    await deleteNotepad(params.notes);
+
+    navigate(-1);
+  }, [navigate, params.notes, deleteNotepad]);
+
+  return (
+    <ListItems
+      title={t('notes')}
+      goBack={goBack}
+      item={notepad}
+      helpActions={[
+        {
+          name: t('remove-notepad'),
+          handleClick: removeNotepad,
+        },
+      ]}
+    />
+  );
 }
