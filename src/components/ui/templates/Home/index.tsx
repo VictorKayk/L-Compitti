@@ -58,13 +58,13 @@ export function Home({
             item={note.item}
           />
         </Link>
-        <Link to={pomodoro.linkTo}>
+        {/* <Link to={pomodoro.linkTo}>
           <ListedItemContainer
             title={pomodoro.title}
             number={pomodoro.number}
             item={pomodoro.item}
           />
-        </Link>
+        </Link> */}
       </ItensContainer>
     </Container>
   );

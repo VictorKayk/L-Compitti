@@ -38,7 +38,7 @@ export function Menu({
       <LinkContainer>
         <TitleLink title={todo.title} link={todo.linkTo} />
         <TitleLink title={note.title} link={note.linkTo} />
-        <TitleLink title={pomodoro.title} link={pomodoro.linkTo} />
+        {/* <TitleLink title={pomodoro.title} link={pomodoro.linkTo} /> */}
         <TitleLink title={config.title} link={config.linkTo} />
       </LinkContainer>
     </Container>
