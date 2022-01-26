@@ -24,7 +24,7 @@
     "create-todo-list": "Criar lista de tarefas",
     "remove-todo-list": "Remover lista de tarefas",
     "edit-todo-list": "Editar lista de tarefas",
-    "create-todo": "Criar tarefas",
+    "create-todo": "Criar tarefa",
     "remove-todo": "Remover tarefa",
     "edit-todo": "Editar tarefa",
     "error-name-todo-list-min": "O nome da lista de tarefas teve conter pelo menos 2 caracteres.",
