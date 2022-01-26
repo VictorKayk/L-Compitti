@@ -8,6 +8,7 @@ import { ListedItem } from './ListedItem';
 import { HeaderContainer } from './HeaderContainer';
 import { IconThemedComponent } from './IconThemedComponent';
 import { DetectClickOutside } from './DetectClickOutside';
+import { Modal } from './Modal';
 
 export {
   Loading,
@@ -20,4 +21,5 @@ export {
   HeaderContainer,
   IconThemedComponent,
   DetectClickOutside,
+  Modal,
 };

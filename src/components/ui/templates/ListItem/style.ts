@@ -29,7 +29,8 @@ export const TitleAndDateContainer = styled.div`
   }
 `;
 
-export const NoteContainer = styled.div`
+export const NoteContainer = styled.p`
+  word-break: break-all;
   text-indent: 20px;
   padding: 0 0.3rem;
 `;

@@ -6,34 +6,41 @@ import { CloseButton } from '..';
 import { Modal, Title } from '../../atoms';
 import { Header, Container, Form } from './style';
 
-interface IModalSingleText {
+interface IModalTextAndTextarea {
   isOpen: boolean;
   closeModal: () => void;
   title: string;
-  labelTitle: string;
-  submitButton: string;
-  defaultTextValue?: string;
+  label: {
+    text: string;
+    textarea: string;
+  };
+  submitButtonTitle: string;
+  defaultValue?: {
+    text?: string;
+    textarea?: string;
+  };
   onSubmit: SubmitHandler<FieldValues>;
   schema: AnyObjectSchema;
 }
 
-export function ModalSingleText({
+export function ModalTextAndTextarea({
   isOpen,
   closeModal,
   schema,
   onSubmit,
   title,
-  labelTitle,
-  submitButton,
-  defaultTextValue = '',
-}: IModalSingleText): ReactElement {
+  label,
+  submitButtonTitle,
+  defaultValue,
+}: IModalTextAndTextarea): ReactElement {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      text: defaultTextValue,
+      text: defaultValue?.text || '',
+      textarea: defaultValue?.textarea || '',
     },
     resolver: yupResolver(schema),
   });
@@ -44,16 +51,20 @@ export function ModalSingleText({
         <Header>
           <Title title={title} />
           <CloseButton handleDelete={closeModal} />
-          <CloseButton handleDelete={closeModal} />
         </Header>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <label htmlFor="text">{labelTitle}:</label>
+            <label htmlFor="text">{label.text}:</label>
             <input type="text" id="text" {...register('text')} />
             <p>{errors.text?.message}</p>
           </div>
+          <div>
+            <label htmlFor="textarea">{label.textarea}:</label>
+            <textarea id="textarea" {...register('textarea')} />
+            <p>{errors.textarea?.message}</p>
+          </div>
           <button type="submit">
-            <span>{submitButton}</span>
+            <span>{submitButtonTitle}</span>
           </button>
         </Form>
       </Container>

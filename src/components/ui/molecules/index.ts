@@ -9,6 +9,7 @@ import { List } from './List';
 import { CloseButton } from './CloseButton';
 import { TitleAndDate } from './TitleAndDate';
 import { ModalSingleText } from './ModalSingleText';
+import { ModalTextAndTextarea } from './ModalTextAndTextarea';
 
 export {
   MenuIcon,
@@ -22,4 +23,5 @@ export {
   TitleAndDate,
   CloseButton,
   ModalSingleText,
+  ModalTextAndTextarea,
 };

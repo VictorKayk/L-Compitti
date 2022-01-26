@@ -59,6 +59,7 @@ export const NoteAndTitleContainer = styled.div`
 `;
 
 export const NoteContainer = styled.div`
+  word-break: break-all;
   text-indent: 20px;
   padding: 0 0.9375rem;
 `;
