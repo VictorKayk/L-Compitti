@@ -121,13 +121,17 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-  <a href="https://www.instagram.com/victorkayk77/" alt="Instagram">
-    <img src="https://img.shields.io/badge/-Instagram-1C1C1C?style=for-the-badge&logo=Instagram&logoColor=00FFFF&link=https://www.instagram.com/victorkayk77/"/>
+<div>
+  <a href="https://twitter.com/VictorKayk77" alt="Twitter">
+    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
   </a>
-  <a href="https://www.linkedin.com/in/victorkayk/" alt="Linkedin">
-    <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/victorkayk/"/>
+  <a href="https://instagram.com/victorkayk77" alt="Instagram">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
   </a>
-
-Victor Kayk - victorkayk77@gmail.com
-
-Project link: [https://github.com/VictorKayk/L-Compitti](https://github.com/VictorKayk/L-Compitti)
+  <a href="https://www.linkedin.com/in/victorkayk/" alt="LinkedIn">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="mailto:victorkayk77@gmail.com" alt="Gmail">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
+  </a>
+</div>
